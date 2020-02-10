@@ -4,6 +4,7 @@
 https://www.zhihu.com/question/41476832/answer/740095185
 
 
+
 数学基础
 数学的书https://www.zhihu.com/question/36512716/answer/69017140
   线性代数
@@ -59,9 +60,23 @@ https://www.zhihu.com/question/41476832/answer/740095185
     liuyubobobo 老师，三门算法课视频（吹爆
      https://www.zhihu.com/question/304174916/answer/542462788
      数据结构 by 邓公 from 清华：MOOC
-  数据库
-    
+     https://www.icourse163.org/course/0809ZJU009-93001?utm_campaign=share&utm_medium=androidShare&utm_source=#/info
+    教材： 大话数据结构、剑指offer
+      树结构。生活工作中无处不在（因为找起来很高效呀） 和xmind脑图结构好像哦
+      递归 就看做是调了个函数 新的地方新开一个函数。
+      栈 应用 撤回操作 括号对应
+      系统栈 函数调函数 记录父函数是从那里中断跳到子函数的 做完子函数根据系统栈里记录的函数位置 依次执行
+      队列 就和排队一样 先看完的先出来
+      优先队列 医院排队 不看进院顺序哪个紧急哪个先去 应用：操作系统执行哪个应用程序 实时更新
+
+  数据库 
     数据库 from MIT 6.830: MIT, youbube
+    数据库原理：
+    教材： 萨师煊老师 的 数据库原理与应用
+    视频： 萨师煊老师 的 数据库原理与应用
+    MySQL：
+    教材： 高性能MySQL（吹爆）
+    视频： 打造扛得住的MySQL架构
   算法
     算法导论 by Prof. Erik Demaine from MIT
     算法图解
@@ -69,6 +84,9 @@ https://www.zhihu.com/question/41476832/answer/740095185
     http://www.bilibili.com/video/av60720205/?share_source=copy_link&p=2&ts=1564211560&share_medium=iphone&bbid=Z74E7176474EC3194F639078D5E1DB0D1713
 
     动态规划
+      https://zhuanlan.zhihu.com/p/91582909
+
+
     
 
 机器学习
@@ -96,21 +114,37 @@ https://www.zhihu.com/question/41476832/answer/740095185
   11. CS231n 斯坦福深度视觉识别课 by Feifei Li from stanford：MOOC
 
 编程语言
-C++
-Java
-https://github.com/gzc426/Java-Interview
-python
-  python教程
-  http://www.bilibili.com/video/av22845954/?share_source=copy_link&p=1&ts=1564156946&share_medium=iphone&bbid=Z74E7176474EC3194F639078D5E1DB0D1713
+  C++
+  Java
+    https://github.com/gzc426/Java-Interview
+    Java高并发：
+    教材： Java编程思想
+    视频： Java并发编程入门与高并发面试
+
+    Java虚拟机
+    教材： 深入理解Java虚拟机（吹爆）
+    突击效果不明显，但是好书推荐（没看完）
+    书籍： 码农翻身，数学之美，编程珠玑，深入分析Java Web， 深入理解计算机系统
+
+  python
+    python教程
+    http://www.bilibili.com/video/av22845954/?share_source=copy_link&p=1&ts=1564156946&share_medium=iphone&bbid=Z74E7176474EC3194F639078D5E1DB0D1713
 
 
+操作系统
+  6. 分布式系统 from MIT 6.824: MIT, youtube
+  7. 操作系统 from MIT 6.828: MIT, youtube
+  操作系统：
+  教材： 汤小丹老师 的 计算机操作系统
+  视频： 陈向群老师 的 操作系统原理
 
-
+计算机网络：
+教材：谢希仁老师 的 计算机网络， 图解HTTP协议
+视频：韩立刚老师 的 计算机网络原理视频，
 
 其他：
 
-6. 分布式系统 from MIT 6.824: MIT, youtube
-7. 操作系统 from MIT 6.828: MIT, youtube
+
 服务器
 https://www.zhihu.com/question/40854395/answer/728324567
 
