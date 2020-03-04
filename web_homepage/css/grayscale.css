@@ -102,7 +102,7 @@
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
-  background: -webkit-linear-gradient(#bd5d38, rgb(238, 232, 232));
+  background: -webkit-linear-gradient(#161616, rgb(238, 232, 232));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
@@ -163,8 +163,8 @@
 }
 
 .about-section {
-  padding-top: 10rem;
-  background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+  padding-top: 10rem;rgba(22, 22, 22, 0.8)
+  background: linear-gradient(to bottom, #fff 0%, #bd5d38 75%, #bd5d38 100%);
 }
 
 .about-section p {
