@@ -164,7 +164,7 @@
 
 .about-section {
   padding-top: 10rem;rgba(22, 22, 22, 0.8)
-  background: linear-gradient(to bottom,#161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+  background: linear-gradient(to bottom,#161616 61616 0,rgba(22,22,22,.9) 75%,rgba(22,22,22,.8) 100%);
 /* #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) */
 
 .about-section p {
