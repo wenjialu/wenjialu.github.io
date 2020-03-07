@@ -294,8 +294,8 @@ a:focus, a:hover {
   color: #3c6360;
 }
 
-.bg-green {
-  background-color: #64a19d !important;
+.bg-orange {
+  background-color: rgb(230, 145, 66)!important;
   /*#cadfca*/
 }
 
