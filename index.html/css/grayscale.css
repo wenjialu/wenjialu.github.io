@@ -295,7 +295,7 @@ a:focus, a:hover {
 }
 
 .bg-orange {
-  background-color: rgb(230, 145, 66)!important;
+  background-color: rgba(163, 99, 39, 0.137)!important;
   /*#cadfca*/
 }
 
