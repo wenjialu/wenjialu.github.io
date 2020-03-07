@@ -184,7 +184,14 @@
 @media (min-width: 992px) {
   .projects-section .featured-text {
     padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #64a19d;
+    border-left: 0.5rem solid #BD5D38;
+  }
+}
+
+@media (min-width: 992px) {
+  .projects-section .featured-text_r {
+    padding: 0 0 0 2rem;
+    border-right: 0.5rem solid #BD5D38;
   }
 }
 
