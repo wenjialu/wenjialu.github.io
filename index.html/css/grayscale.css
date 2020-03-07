@@ -187,11 +187,16 @@
     border-left: 0.5rem solid #BD5D38;
   }
 }
-
+@media (min-width: 992px) {
+  .projects-section .featured-text_l {
+    padding: 0 0 0 2rem;
+    border-left: 0.5rem solid rgb(230, 145, 66);
+  }
+}
 @media (min-width: 992px) {
   .projects-section .featured-text_r {
     padding: 0 0 0 2rem;
-    border-right: 0.5rem solid #BD5D38;
+    border-right: 0.5rem solid rgb(230, 145, 66);
   }
 }
 
