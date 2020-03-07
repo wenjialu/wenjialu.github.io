@@ -282,8 +282,13 @@ a:focus, a:hover {
   color: #3c6360;
 }
 
+.bg-green {
+  background-color: #64a19d !important;
+  /*#cadfca*/
+}
+
 .bg-black {
-  background-color: #cadfca !important;
+  background-color: #161616 !important;
   /*#161616*/
 }
 
