@@ -9,7 +9,7 @@ body#wholeDocument {
     font-size: 12px;
 color: rgb(102,102,102);
     font-family: "Optima", sans-serif; 
-    font-size: 8px;
+    font-size: 10px;
     line-height: 1.32;
     background-color: rgb(254,255,255);
     
@@ -335,7 +335,7 @@ tr.note-row td.note-bg {
 
 }
 table.whole-row, table.whole-note, table#column-header, div.temp-wrapper {
-width: 871px;
+width: 937px;
 
 }
 /******************
@@ -353,12 +353,12 @@ tr#header td:nth-of-type(1), tr.outline-row > td:nth-of-type(1), tr.note-row > t
     max-width: 20px; 
 }
 table.outline-column { 
-    width: 197px; 
-    max-width: 197px; 
+    width: 150px; 
+    max-width: 150px; 
 }
 tr#header td:nth-of-type(2), tr.outline-row > td:nth-of-type(2) { 
-    width: 197px; 
-    max-width: 197px; 
+    width: 150px; 
+    max-width: 150px; 
     
 }
 tr#header td:nth-of-type(3), tr.outline-row > td:nth-of-type(3), tr.note-row > td:nth-of-type(3) { 
@@ -372,8 +372,8 @@ tr#header td:nth-of-type(4), tr.outline-row > td:nth-of-type(4), tr.note-row > t
     
 }
 tr#header td:nth-of-type(5), tr.outline-row > td:nth-of-type(5), tr.note-row > td:nth-of-type(5) { 
-    width: 102px; 
-    max-width: 102px; 
+    width: 215px; 
+    max-width: 215px; 
     
 }
 tr#header td:nth-of-type(6), tr.outline-row > td:nth-of-type(6), tr.note-row > td:nth-of-type(6) { 
@@ -397,7 +397,6 @@ tr.outline-row > td:nth-of-type(1), tr.note-row > td:nth-of-type(1){
     
 }
 tr.outline-row > td:nth-of-type(2) { 
-    text-align: center;
     
 }
 tr.outline-row > td:nth-of-type(3), tr.note-row > td:nth-of-type(3){ 
@@ -492,57 +491,57 @@ Named styles info:
 Padding values are not included here because they are additive and can affect a different row than the one that has the attribute
 *********************************************/
 /* Named Styles */
-div#centered tr td .ns-pjrIVQjvs2o-, .ns-pjrIVQjvs2o-, div#centered .ns-pjrIVQjvs2o- div { 
+div#centered tr td .ns-b-O722rwjpQ-, .ns-b-O722rwjpQ-, div#centered .ns-b-O722rwjpQ- div { 
     color: rgb(159,60,56);
     
 }
-div#centered tr td .ns-npoGGFvk506-, .ns-npoGGFvk506-, div#centered .ns-npoGGFvk506- div { 
+div#centered tr td .ns-ch9nn6qV2US-, .ns-ch9nn6qV2US-, div#centered .ns-ch9nn6qV2US- div { 
     color: rgb(93,103,212);
     
 }
-div#centered tr td .ns-hpDjpU9eCeY-, .ns-hpDjpU9eCeY-, div#centered .ns-hpDjpU9eCeY- div { 
+div#centered tr td .ns-nwOMaFFYvqD-, .ns-nwOMaFFYvqD-, div#centered .ns-nwOMaFFYvqD- div { 
     color: rgb(61,153,96);
     
 }
-div#centered tr td .ns-lzt5BB6ioGB-, .ns-lzt5BB6ioGB-, div#centered .ns-lzt5BB6ioGB- div { 
+div#centered tr td .ns-nRiOo2s4fsD-, .ns-nRiOo2s4fsD-, div#centered .ns-nRiOo2s4fsD- div { 
     color: rgb(189,144,24);
     
 }
-div#centered tr td .ns-kbKz7HIqG3Y-, .ns-kbKz7HIqG3Y-, div#centered .ns-kbKz7HIqG3Y- div { 
+div#centered tr td .ns-ahENB5MlXRg-, .ns-ahENB5MlXRg-, div#centered .ns-ahENB5MlXRg- div { 
     color: rgb(0,0,0);
     
 }
 
 /* Named Styles Backgroud Colors */
-div#centered tr td .ns-bg-pjrIVQjvs2o-, .ns-bg-pjrIVQjvs2o- { 
+div#centered tr td .ns-bg-b-O722rwjpQ-, .ns-bg-b-O722rwjpQ- { 
     
 }
-div#centered tr td .ns-bg-npoGGFvk506-, .ns-bg-npoGGFvk506- { 
+div#centered tr td .ns-bg-ch9nn6qV2US-, .ns-bg-ch9nn6qV2US- { 
     
 }
-div#centered tr td .ns-bg-hpDjpU9eCeY-, .ns-bg-hpDjpU9eCeY- { 
+div#centered tr td .ns-bg-nwOMaFFYvqD-, .ns-bg-nwOMaFFYvqD- { 
     
 }
-div#centered tr td .ns-bg-lzt5BB6ioGB-, .ns-bg-lzt5BB6ioGB- { 
+div#centered tr td .ns-bg-nRiOo2s4fsD-, .ns-bg-nRiOo2s4fsD- { 
     
 }
-div#centered tr td .ns-bg-kbKz7HIqG3Y-, .ns-bg-kbKz7HIqG3Y- { 
+div#centered tr td .ns-bg-ahENB5MlXRg-, .ns-bg-ahENB5MlXRg- { 
     
 }
 
 /* Named Styles Gutter Colors */
-div#centered tr td .ns-gutter-pjrIVQjvs2o-, .ns-gutter-pjrIVQjvs2o- { 
+div#centered tr td .ns-gutter-b-O722rwjpQ-, .ns-gutter-b-O722rwjpQ- { 
     
 }
-div#centered tr td .ns-gutter-npoGGFvk506-, .ns-gutter-npoGGFvk506- { 
+div#centered tr td .ns-gutter-ch9nn6qV2US-, .ns-gutter-ch9nn6qV2US- { 
     
 }
-div#centered tr td .ns-gutter-hpDjpU9eCeY-, .ns-gutter-hpDjpU9eCeY- { 
+div#centered tr td .ns-gutter-nwOMaFFYvqD-, .ns-gutter-nwOMaFFYvqD- { 
     
 }
-div#centered tr td .ns-gutter-lzt5BB6ioGB-, .ns-gutter-lzt5BB6ioGB- { 
+div#centered tr td .ns-gutter-nRiOo2s4fsD-, .ns-gutter-nRiOo2s4fsD- { 
     
 }
-div#centered tr td .ns-gutter-kbKz7HIqG3Y-, .ns-gutter-kbKz7HIqG3Y- { 
+div#centered tr td .ns-gutter-ahENB5MlXRg-, .ns-gutter-ahENB5MlXRg- { 
     
 }
