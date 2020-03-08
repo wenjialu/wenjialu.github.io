@@ -285,9 +285,17 @@ body {
   letter-spacing: 0.0625em;
 }
 
-a {
+a1 {
   color: #64a19d;
 }
+
+
+a {
+  color: #BD5D38;
+}
+
+
+
 
 a:focus, a:hover {
   text-decoration: none;
