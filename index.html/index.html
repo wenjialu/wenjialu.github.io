@@ -170,7 +170,26 @@
 
       </div>
       </section>
-
+      lalalal
+      <!--Gitment 是作者实现的一款基于 GitHub Issues 的评论系统
+        简介 https://imsun.net/posts/gitment-introduction/-->
+      <div id="container"></div>
+      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+      <script>
+      var gitment = new Gitment({
+        id: '页面 ID', // 可选。默认为 location.href
+        owner: 'wenijalu',
+        repo: '存储评论的 repo',
+        oauth: {
+          client_id: '2a6ce13efa101024f112',
+          client_secret: '03de55ca0600329e19c8e73e44ab7fa65592338d',
+        },
+      })
+gitment.render('container')
+      </script>
+      
+      lallllllll
   <!-- Signup Section -->
   <section id="signup" class="signup-section">
     <div class="container">
@@ -190,6 +209,8 @@
     </div>
   </section>
 
+
+
   <!-- Contact Section -->
   <section class="contact-section bg-black">
     <div class="container">
@@ -202,7 +223,7 @@
               <i class="fas fa-map-marked-alt text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Linkedin</h4>
               <hr class="my-4">
-              <div class="small text-black-50"><a href="https://www.linkedin.com/in/wenjialu/">connect me on Linkedin</a></div>
+              <div class="small text-black-50"><a href="https://www.linkedin.com/in/wenjialu/">Connect me on Linkedin</a></div>
             </div>
           </div>
         </div>
@@ -226,7 +247,7 @@
               <i class="fas fa-mobile-alt text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">facebook</h4>
               <hr class="my-4">
-              <div class="small text-black-50"><a href="facebook.com/wenjia.lu.71">follow me on fb</a></div>
+              <div class="small text-black-50"><a href="facebook.com/wenjia.lu.71">Follow me on fb</a></div>
             </div>
           </div>
         </div>
