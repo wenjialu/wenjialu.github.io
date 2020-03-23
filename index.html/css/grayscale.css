@@ -173,6 +173,8 @@
   margin-bottom: 5rem;
 }
 
+
+
 .projects-section {
   padding: 10rem 0;
 }
@@ -215,6 +217,17 @@
     width: 30%;
   }
 }
+
+.comment-section {
+  padding: 10rem 0;
+  background:rgb(219, 231, 243) , url("..jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+
 
 .signup-section {
   padding: 10rem 0;
