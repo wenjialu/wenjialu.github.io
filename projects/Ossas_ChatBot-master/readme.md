@@ -303,7 +303,7 @@ CQHTTP下载地址：https://cqhttp.cc/
 
 ## 程序简图
 
-![OSSAS_work_flow](/other_file/OSSAS_work_flow.png)
+![OSSAS_work_flow](/Users/lujiawen/Desktop/工作台/mygit_personalweb/wenjialu.github.io/projects/Ossas_ChatBot-master/other_file/OSSAS_work_flow.png)
 
 # 更新记录
 
