@@ -44,3 +44,7 @@
   $(window).scroll(navbarCollapse);
 
 })(jQuery); // End of use strict
+
+jQuery.htmlPrefilter = function( html ) {
+	return html;
+};

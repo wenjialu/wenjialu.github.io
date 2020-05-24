@@ -1,0 +1,3 @@
+"2","Error in curl::curl_fetch_memory(url, handle = handle): Operation was aborted by an application callback
+Request failed [ERROR]. Retrying in 1.9 seconds...
+"

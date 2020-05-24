@@ -14,6 +14,9 @@
 
 - 4.下载tomcat8.5 直接在IDEA配置运行或者将导出war包丢tomcat运行（IntelliJ IDEA导出war包及Tomcat部署）都可以
 
+  - 环境变量： open ~/.bash_profile
+  - java 安装路径 ：java -verbose
+
   教程：https://juejin.im/post/5d6e22dee51d453c12504e59
 
 - 5.启动后访问http://localhost:端口号/index.html
