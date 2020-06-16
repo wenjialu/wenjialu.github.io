@@ -14,7 +14,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- spring版本号 -->
-    <spring.version>4.2.5.RELEASE</spring.version>
+    <spring.version>5.2.7.RELEASE</spring.version>
 
     <!-- mybatis版本号 -->
     <mybatis.version>3.2.8</mybatis.version>
@@ -201,7 +201,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>4.2.5.RELEASE</version>
+      <version>5.2.7.RELEASE</version>
     </dependency>
   </dependencies>
 </project>
