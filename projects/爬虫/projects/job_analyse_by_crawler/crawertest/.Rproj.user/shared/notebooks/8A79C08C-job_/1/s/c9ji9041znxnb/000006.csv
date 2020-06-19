@@ -1,0 +1,8 @@
+"0","for (k in 1:100){"
+"0","  webcode = GET(url[k])"
+"0","  # webcode =  RETRY(""GET"", url[k])"
+"0","  Sys.sleep(runif(1,2,3))"
+"0","  save(webcode,file = paste0(""job"",k,"".Rdata""))"
+"0","}"
+"2","
+"
