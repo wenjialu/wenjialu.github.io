@@ -1,0 +1,10 @@
+<div class="article-datetime"><% if (page.archive){ %>
+									<time datetime="<%= date_xml(post.date) %>" itemprop="datePublished" content="<%= date_xml(post.date) %>"><%= date(post.date, config.date_format) %></time>
+									<time datetime="<%= date_xml(post.date) %>"><%= date(post.date, config.time_format) %></time><% } %><% if (index && !(page.archive)){ %>
+									<time datetime="<%= date_xml(post.date) %>" itemprop="datePublished" content="<%= date_xml(post.date) %>"><%= date(post.date, config.date_format) %></time>
+									<time datetime="<%= date_xml(post.date) %>"><%= date(post.date, config.time_format) %></time>
+								</div><% } if (!(index) && !(page.archive)) { %>
+						<time datetime="<%= date_xml(post.date) %>" itemprop="datePublished" content="<%= date_xml(post.date) %>"><%= date(post.date, config.date_format) %></time>
+						<time datetime="<%= date_xml(post.date) %>"><%= date(post.date, config.time_format) %></time><span itemprop="dateModified" content="<%= date_xml(post.updated) %>>"</span>
+					</div>
+		<% } %>

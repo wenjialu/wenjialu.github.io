@@ -1,0 +1,14 @@
+<% if (post.prev || post.next){ %>				<nav id="article-nav" class="nav nav-pills nav-justified blog-pagination">
+	<% if (post.next){ %>				<li role="presentation">
+						<a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="btn btn-outline-primary">
+							<i class="fa fa-chevron-left pull-left"></i>
+							<span class="article-nav-link-title"><%= post.next.title.substring(0,20)+"..." || '(no title)' %></span>
+						</a>
+					</li><% } %><% if (post.prev){ %>
+						<li role="presentation">
+							<a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="btn btn-outline-primary">
+								<span class="article-nav-link-title" ><%= post.prev.title.substring(0,20)+"..." || '(no title)' %></span>
+								<i class="fa fa-chevron-right pull-right"></i>
+							</a>
+						</li><% } %>
+				</nav><% } %>

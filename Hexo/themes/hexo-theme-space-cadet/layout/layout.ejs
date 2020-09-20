@@ -1,0 +1,26 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<%- partial('_partial/head') %>
+<body>
+	<a name="top"></a>
+	<header>
+		<%- partial('_partial/navbar') %>
+		<%- partial('_partial/masthead', {}, {cache: config.fragment_cache}) %>
+	</header>
+	<div class="container">
+	    <div class="row">
+        	<main class="col-sm-8 blog-main">
+        		<%- body %>
+        	</main>
+			<aside class="col-sm-4 col-sm-offset-1 blog-sidebar">
+        		<%- partial('_partial/sidebar', {}, {cache: !config.relative_link}) %>
+			</aside>
+		</div>
+	</div>
+	<footer class="blog-footer">
+		<%- partial('_partial/footer', {}, {cache: config.fragment_cache}) %>
+		<a href="#top">Back to top</a>
+	</footer>
+	<%- partial('_partial/inline-scripts', {}, {cache: config.fragment_cache}) %>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<% if (site.posts.length){ %>
+				<div class="sidebar-module">
+					<h4>Archive</h4>
+					<%- list_archives({show_count: theme.show_count, type: theme.archive_type, class: 'sidebar-module'}) %>
+				</div><% } %>
