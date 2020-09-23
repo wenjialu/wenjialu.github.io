@@ -62,3 +62,4 @@ const gitalk = new Gitalk({
 })
  
 gitalk.render('gitalk-container');
+
