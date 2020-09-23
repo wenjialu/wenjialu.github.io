@@ -106,11 +106,15 @@
   background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  /* me:底部对齐 */
+  vertical-align:bottom;
 }
 
 .masthead h2 {
   max-width: 20rem;
   font-size: 1rem;
+  /* me:底部对齐 */
+  vertical-align:bottom;
 }
 
 @media (min-width: 768px) {
@@ -144,8 +148,11 @@
   text-transform: uppercase;
   letter-spacing: .15rem;
   border: 0;
+  /* me:底部对齐 */
+  vertical-align:bottom;
 }
 
+/* Get ready to explore 那个按钮 */
 .btn-primary {
   background-color: #64a19d;
 }
