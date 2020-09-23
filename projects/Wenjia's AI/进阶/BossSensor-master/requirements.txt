@@ -1,0 +1,13 @@
+h5py==2.8.0
+Keras==2.2.4
+mock==2.0.0
+numpy==1.15.3
+pbr==5.1.0
+protobuf==3.6.1
+PyYAML==3.13
+scikit-learn==0.20.0
+scipy==1.1.0
+six==1.11.0
+sklearn==0.0
+tensorflow==1.11.0
+Theano==1.0.3
