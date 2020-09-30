@@ -154,20 +154,24 @@
 
 /* Get ready to explore 那个按钮 */
 .btn-primary {
-  background-color: #64a19d;
+  background-color: #BD5D38;
+  /* #64a19d; */
 }
 
 .btn-primary:hover {
-  background-color: #4f837f;
+  background-color: rgb(230, 145, 66);
+   /* #4f837f; */
 }
 
 .btn-primary:focus {
-  background-color: #4f837f;
+  background-color: rgb(230, 145, 66);
+  /* #4f837f; */
   color: white;
 }
 
 .btn-primary:active {
-  background-color: #467370 !important;
+  background-color: rgb(230, 145, 66)
+   /* #467370 !important; */
 }
 
 .about-section {
