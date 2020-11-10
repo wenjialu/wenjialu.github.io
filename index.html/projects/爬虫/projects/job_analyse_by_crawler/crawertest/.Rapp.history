@@ -1,0 +1,4 @@
+load("/Users/lujiawen/Desktop/crawertest/job1.Rdata")
+load("/Users/lujiawen/Desktop/crawertest/job1.Rdata")
+a = load("/Users/lujiawen/Desktop/crawertest/job1.Rdata")#
+> a

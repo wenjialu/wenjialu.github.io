@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592275074782.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1439803476",
+    "id" : "E2E6DB3",
+    "lastKnownWriteTime" : 1592283511,
+    "last_content_update" : 1592283511736,
+    "path" : "~/Desktop/crawertest/job_.Rmd",
+    "project_path" : "job_.Rmd",
+    "properties" : {
+        "cursorPosition" : "48,58",
+        "last_setup_crc32" : "7E5A1A2bb338d19",
+        "scrollLine" : "42",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

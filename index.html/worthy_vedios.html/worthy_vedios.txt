@@ -1,0 +1,196 @@
+子孙后代都值得看的视频⭐️
+
+美剧—heros多维
+学习网站
+https://www.zhihu.com/question/41476832/answer/740095185
+可汗-英
+可汗-网易
+网易云课堂
+51cto学院
+慕课网(IMOOC)  看视频，你还可以在线编程练习
+学堂在线
+(清华大学发起的精品中文慕课平台,为广大学习者提供来自清华、北大、斯坦福、MIT等知名高校创业、经管、语言、计算机等各类1000余门免费课程
+)
+做cs的，可以去看斯坦福对应课程查一查，就算没lecture，也有一堆tutorial和slides可以下，比如cs231n，还有一门probility for cs，看这个课tutorial比看书清楚多了 
+youtube想查啥课的时候，输名字，选playlist，你会发现有一堆mit这些学校的大哥课，搞不好slides，notes，homework，solution是一套[Smirk] 
+
+
+数学基础
+
+https://mp.weixin.qq.com/s/4jfzy12vQzM8knJuOGdjDw
+
+数学的书https://www.zhihu.com/question/36512716/answer/69017140
+  不可思议的自然指数
+  线性代数
+      
+
+《沉浸式线性代数》(Immersive Linear Algebra) ：通过可以活动的图像，你可以观察和理解难懂的数学理论：
+http://immersivemath.com/ila/index.html
+
+       
+      线性代数 by Prof. Gilbert Strang from MIT
+      麻省理工线性代数
+      链接：http://pan.baidu.com/s/1o7Dnmp8 密码：ny2k
+      线性代数 https://www.zhihu.com/question/48547721/answer/546329783
+      抽象代数 from 哈佛大学：B站，哈佛官网
+      线性代数 https://www.zhihu.com/question/48547721/answer/546329783
+      猴博士现代，概率论
+  向量
+  概率统计
+      可汗学院概率论
+      链接：http://pan.baidu.com/s/1i5aybuX 密码：5u9d
+      可汗学院统计：
+      链接：http://pan.baidu.com/s/1i5czV7n 密码：y952
+      陈希孺院士的《概率论与数理统计》、《数理统计学教程 》，行文优美，简直不像是数学教材【★★★★★】
+
+      一本神书《Probability Theory: The Logic of Science》，中文名为《概率论沉思录》，不过没有翻译
+
+      1. Introduction to Probability from MIT:  youtube，MIT官网 (2018最新款)
+      2. 概率课 by 叶丙成教授 from 台大：coursera
+  微积分
+    俄亥俄州立大学微积分基础：较为简单
+    宾夕法尼亚大学单变量微积分5门课，比上面的课稍微难一些：
+    链接：http://pan.baidu.com/s/1nuFri1F 密码：e00q
+  
+数据分析
+  
+    0基础都能学的Python数据分析课程
+    https://study.163.com/course/courseMain.htm?courseId=1209401897&utm_source=qq.com&utm_medium=group_message&utm_campaign=business&utm_content=3pythonzhibo&_trace_c_p_k2_=2278a44a81d1448f86072ee73db2316c
+
+    行业分析？？
+    https://www.zhihu.com/question/21324385/answer/680476447
+
+    如何思考
+    http://www.bilibili.com/video/av55788923/?share_source=copy_link&p=1&ts=1563298100&share_medium=iphone&bbid=Z74E7176474EC3194F639078D5E1DB0D1713
+
+
+计算机知识
+  计算机基础
+    计算机相关原理：
+    哈佛大学的CS50。书内容的精简版，一共20集，一天看一集也就只需要20天。
+    计算机科学 from 哈佛：B站
+    Introduction to Computer Systems 深入理解计算机系统的课程 from CMU: B站
+    计算机基础 http://www.bilibili.com/video/av60255379/?share_source=copy_link&p=1&ts=1564156891&share_medium=iphone&bbid=Z74E7176474EC3194F639078D5E1DB0D1713
+
+  编程范式
+    程方法学 from Stanford: B站-课程A B站-课程B
+    编程范式 from Stanford: B站
+    14. Programming Languages by Dan Grossman from华盛顿大学: coursera
+
+  数据结构
+    https://www.zhihu.com/zvideo/1218276323828834304一个通俗的视频
+    liuyubobobo 老师，三门算法课视频（吹爆
+     https://www.zhihu.com/question/304174916/answer/542462788
+     数据结构 by 邓公 from 清华：MOOC
+     https://www.icourse163.org/course/0809ZJU009-93001?utm_campaign=share&utm_medium=androidShare&utm_source=#/info
+     数据结构上：
+      http://www.xuetangx.com/courses/search?query=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&qt=1&page=1
+      数据结构下：
+      http://www.xuetangx.com/courses/course-v1:TsinghuaX+30240184_2X+sp/about
+    教材： 大话数据结构、剑指offer
+      树结构。生活工作中无处不在（因为找起来很高效呀） 和xmind脑图结构好像哦
+      递归 就看做是调了个函数 新的地方新开一个函数。
+      栈 应用 撤回操作 括号对应
+递归
+https://mp.weixin.qq.com/s/7Tqc84twkk3bRmIebxwWAg
+
+      系统栈 函数调函数 记录父函数是从那里中断跳到子函数的 做完子函数根据系统栈里记录的函数位置 依次执行
+      队列 就和排队一样 先看完的先出来
+      优先队列 医院排队 不看进院顺序哪个紧急哪个先去 应用：操作系统执行哪个应用程序 实时更新
+
+  数据库 
+    数据库 from MIT 6.830: MIT, youbube
+    数据库原理：
+    教材： 萨师煊老师 的 数据库原理与应用
+    视频： 萨师煊老师 的 数据库原理与应用
+    MySQL：
+    教材： 高性能MySQL（吹爆）
+    视频： 打造扛得住的MySQL架构
+  算法
+    算法导论 by Prof. Erik Demaine from MIT
+    算法图解
+    算法与数据结构
+    http://www.bilibili.com/video/av60720205/?share_source=copy_link&p=2&ts=1564211560&share_medium=iphone&bbid=Z74E7176474EC3194F639078D5E1DB0D1713
+
+    动态规划
+      https://zhuanlan.zhihu.com/p/91582909
+
+
+    算法有啥用：https://mp.weixin.qq.com/s?__biz=MzU4NTIxODYwMQ==&mid=2247483901&idx=1&sn=c6a6e50354f1abbf2109b1d62bcf5237&chksm=fd8caebbcafb27adca8478a851f9ddf82623ba0175dbca3921f9f3cd1df6e431113967baf88b&token=1154095766&lang=zh_CN#rd
+
+机器学习
+  《统计学习方法》
+  hm 人工智能
+  udemy
+  机器学习 by Prof. Andrew ng from stanford
+  coursera《Machine Learning》
+  机器学习与数据处理：
+  机器学习最好的课程NYU的Data Science项目的王牌课程 DS1003 Machine Learning
+  课程视频(Youtube): https://youtu.be/U6M0m9c9_Js
+  课程Slides和参考资料: https://davidrosenberg.github.io/ml2019/#lectures
+  作业: https://davidrosenberg.github.io/ml2019/#assignments
+
+  斯坦福机器学习
+  .Stanford Machine Learning
+  机器学习基石
+  链接：http://pan.baidu.com/s/1nvRICDb 密码：917t
+  udacity 机器学习入门
+  https://cn.udacity.com/course/intro-to-machine-learning--ud120/
+
+  3. 机器学习基石 by 林轩田 from 台大：B站 B站2号
+  深度学习
+  强化学习 coursea recommended by psy classmate
+  18. 深度强化学习 by 李宏毅 from台大：B站
+  4. 深度学习 by 李宏毅 from 台大：B站
+  5. 机器学习 by 李宏毅 from 台大：B站
+视觉
+  11. CS231n 斯坦福深度视觉识别课 by Feifei Li from stanford：MOOC
+绘图
+  js https://www.khanacademy.org/computing/computer-programming/programming
+  动画
+
+编程语言
+  C++
+  Java
+    https://github.com/gzc426/Java-Interview
+    Java高并发：
+    教材： Java编程思想
+    视频： Java并发编程入门与高并发面试
+
+    Java虚拟机
+    教材： 深入理解Java虚拟机（吹爆）
+    突击效果不明显，但是好书推荐（没看完）
+    书籍： 码农翻身，数学之美，编程珠玑，深入分析Java Web， 深入理解计算机系统
+
+  python
+    python教程
+    http://www.bilibili.com/video/av22845954/?share_source=copy_link&p=1&ts=1564156946&share_medium=iphone&bbid=Z74E7176474EC3194F639078D5E1DB0D1713
+
+
+操作系统
+  6. 分布式系统 from MIT 6.824: MIT, youtube
+  7. 操作系统 from MIT 6.828: MIT, youtube
+  操作系统：
+  教材： 汤小丹老师 的 计算机操作系统
+  视频： 陈向群老师 的 操作系统原理
+
+计算机网络：
+教材：谢希仁老师 的 计算机网络， 图解HTTP协议
+视频：韩立刚老师 的 计算机网络原理视频，
+
+其他：
+
+
+服务器
+https://www.zhihu.com/question/40854395/answer/728324567
+
+
+10. 模拟电路 by 郑老师 from上海交大：QQ
+13. 电路 from MIt 6.002：youtube
+
+
+
+15. 公正 Justice from 哈佛：B站
+16. 神秘的混沌理论 纪录片：B站
+17. 哲学：死亡 from 耶鲁大学: B站
+「美丽科学」可能会让你摆脱固有偏见 —— 它是一个专门科普化学知识的网站，视频使用最新的 4k 高清摄影机，用以捕捉化学反应中的缤纷色彩和微妙细节
