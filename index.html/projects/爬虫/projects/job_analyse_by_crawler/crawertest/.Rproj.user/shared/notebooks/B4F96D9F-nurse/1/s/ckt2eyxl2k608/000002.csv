@@ -1,9 +1,0 @@
-"0",""
-"0",""
-"0","title = read_html(webcode)%>%html_nodes('.MsoNormal a')%>%html_text()"
-"0",""
-"0","#webdata = rbind(webdata,data.frame(job,stringsAsFactors = FALSE))"
-"0",""
-"0","title"
-"1","character(0)
-"

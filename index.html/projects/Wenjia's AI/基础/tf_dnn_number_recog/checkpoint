@@ -1,2 +1,0 @@
-model_checkpoint_path: "/Users/lujiawen/Desktop/tf_dnn_number_recog/my_model_final.ckpt"
-all_model_checkpoint_paths: "/Users/lujiawen/Desktop/tf_dnn_number_recog/my_model_final.ckpt"

@@ -1,8 +1,0 @@
-*.pt
-*.txt
-*.pyc
-*.pdf
-*.tar.gz
-*.npz
-
-/data/raw/cifar-100-python
