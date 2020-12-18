@@ -1,0 +1,46 @@
+---
+title: "finance"
+author: "wenjia"
+date: "2020/5/25"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+install.packages("PerformanceAnalytics")
+x = c('quantmod','TTR','PerformanceAnalytics','ggplot2','scales')
+lapply(x,require,character.only=TRUE)
+library(quantmod)
+library(TTR)
+library(PerformanceAnalytics)
+```
+
+#从Yahoo财经下载各全球指数数据
+```{r}
+options(stringsAsFactors = FALSE) 
+symbols<-c("^GSPC","^N225","^HSI","^STI","000001.SS")
+suppressWarnings(getSymbols(symbols,src = "yahoo",from="2016-01-01"))
+```
+
+```{r}
+# 取指数价格调整后的数据，合并数据集
+df<-merge(GSPC$GSPC.Adjusted,HSI$HSI.Adjusted,N225$N225.Adjusted,STI$STI.Adjusted,`000001.SS`$`000001.SS.Adjusted`)
+
+# 对列重命名
+names(df)<-c("GSPC","HSI","N225","STI","SSE")
+
+head(df)
+```
+
+```{r}
+# 可视化
+
+```
+
+# 收益率
+```{r}
+
+```
+
