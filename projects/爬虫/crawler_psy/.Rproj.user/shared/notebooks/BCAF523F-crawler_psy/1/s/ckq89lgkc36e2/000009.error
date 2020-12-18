@@ -1,1 +1,0 @@
-{"frames":[{"character_number":0,"end_character_number":0,"end_line_number":0,"file":"","func":"load(paste0(\"web\", K, \".Rdata\"))","line_number":0},{"character_number":0,"end_character_number":0,"end_line_number":0,"file":"","func":"paste0(\"web\", K, \".Rdata\")","line_number":0}],"message":"Error in paste0(\"web\", K, \".Rdata\") : 找不到对象'K'\n"}

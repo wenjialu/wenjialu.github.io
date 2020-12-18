@@ -1,4 +1,0 @@
-"0"," job_title = read_html(webcode)%>%html_nodes('div.job-name a')%>%html_text()"
-"0","  salary = read_html(webcode)%>%html_nodes('span.red')%>%html_text()"
-"0","  company= read_html(webcode)%>%html_nodes('h3.name a')%>%html_text()"
-"0","  webdata = rbind(webdata,data.frame(job_title,salary,company,stringsAsFactors = FALSE))"
