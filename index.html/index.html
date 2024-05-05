@@ -64,7 +64,7 @@ gitment.render('container')
     user_id: "{{ current_user.user_id }}", // 必填: 该用户在您系统上的唯一ID
     email: "{{ current_user.email }}", // 选填:  该用户在您系统上的主邮箱
     name: "{{ current_user.name }}", // 选填: 用户名
-    signed_up: "{{ current_user.signed_up }}" // 选填: 用户的注册时间，用Unix时间戳表示
+    signed_up: {{ current_user.signed_up }} // 选填: 用户的注册时间，用Unix时间戳表示
     });
   daovoice('update');
 </script>
@@ -75,6 +75,15 @@ gitment.render('container')
   daovoice('update');
 </script>
 </head>
+
+
+  <!--call-->
+<script type="text/javascript">
+  (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
+  'https://academe.ladesk.com/scripts/track.js',
+  function(e){ LiveAgent.createButton('rggaz4gf', e); });
+  </script>
+
 
 <body id="page-top">
 
@@ -220,15 +229,62 @@ gitment.render('container')
         </div>
       </div>
 
+      <!-- Project Two Row -->
+      <!-- <div class="row justify-content-center no-gutters">
+        <div class="col-lg-6">
+          <img class="img-fluid" src="img/demo-image-02-full_mosaic.png" alt="">
+        可以换成跳舞💃的照片,然后文字部分加点vlog链接🔗  -->
+        <!-- </div>    -->
+        <!-- #换个好看点的样式 -->
+        <!-- <div class="col-lg-6 order-lg-first">
+          <div class="bg-orange text-center h-100 project">-->
+            <!--"featured-text_r text-center text-lg-right"-->
+            <!-- <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-left">
+                 <h4 class="text-black">My interests: The higlights in my life</h4>
+                <hr class="d-none d-lg-block mb-0 ml-0">
+                <p class="mb-0 text-black-50">
+                <li>You are what you read</li>
+                <ul><a href='../worthy_vedios.html '>my_reading_steward</a></ul>
+                ../myreading_steward.html 
+                <li>PhotoShop + AI + Latex</li>
+                <ul>one of my latex product is on the right➡️</ul>
+                <ul>tutorial blog
+                  my works . img would be put on later</ul> -->
+                <!-- <li>sketch*level 7</li> 
+                <li href="">K-POP</li>
+                <ul>
+                learned：boom boom; psycho；kill this love; fiesta; <br>
+                Siren；Gashina  <br>
+                whistle(bp); oh_my_god 
+              </ul>               
+                <ul>to be continue：don't know what to do; as if it's your last; icy(itzy)</ul>
+                <li>sports</li>
+                <ul>pool,deep diving,golf</ul>
+                <li>language</li>
+                 <ul>
+                <li>Japanese aim：N2</li>
+                <li>French aim：having a causal chat with some French when I am in France～
+                <ul>ps.I meet with some people who have a passion towards French ( An American, a British, a Swede, a German )weekly, and we just speak French(no matter how awkards it sounds).</ul>
+          </li> 
+                <hr class="d-none d-lg-block mb-0 mr-0">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
 
-      </section> 
+      <!-- </div>--> 
+    </section> 
 
 
-<!--     Comment Section 
-  I have not tied this,  should have a look when i have time: https://disqus.com/features/engage/
-  <section id="comment" class="comment-section">
+      <!-- Comment Section -->
+   <!-- <section id="comment" class="comment-section">
     <div id="container"></div>
-      <div id="gitalk-container"></div>
+      <div id="gitalk-container"></div> -->
+      
+      <!--
       <div id="guestbook" class="item">
         <h2>写新留言</h2>
         <div class="item-content">
@@ -243,8 +299,9 @@ gitment.render('container')
               <div id="recent-messages" class="item-content"></div>
               https://blog.dandyweng.com/messages/
               <a href="" target="_blank">查看更多留言 &rsaquo;</a>
-            </div> 
+            </div> -->
             
+              <!--
             <div id="step-2" class="inner-container">
               <label for="message-name">昵称</label>
               <input type="text" id="message-name" />
@@ -262,19 +319,21 @@ gitment.render('container')
             </div>
             <div id="step-3" class="inner-container">
               <h3>你的留言已经保存。</h3>
-              <p>为防止广告信息，所有留言都会在审核之后才会公开显示。</p>
-      </div>
+              <p>为防止广告信息，所有留言都会在审核之后才会公开显示。</p>-->
+            <!-- </div>
           </div>
-        </div> 
-      </div>
+        </div> -->
+      <!-- </div>
     </div>
    </section> -->
 
 
 
 
+
   <!-- Signup Section -->
-  <section id="signup" class="signup-section">
+  <section id="signup" class="signup-section" >
+  
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-lg-8 mx-auto text-center">
@@ -318,7 +377,7 @@ gitment.render('container')
               <h4 class="text-uppercase m-0">Email</h4>
               <hr class="my-4">
               <div class="small text-black-50">
-                <a1 href="#">wl2667@nyu.edu</a1>
+                <a1 href="#">izoeyz@163.com</a1>
               </div>
             </div>
           </div>
@@ -328,9 +387,9 @@ gitment.render('container')
           <div class="card py-4 h-100">
             <div class="card-body text-center">
               <i class="fas fa-mobile-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Instagram</h4>
+              <h4 class="text-uppercase m-0">facebook</h4>
               <hr class="my-4">
-              <div class="small text-black-50"><a href="facebook.com/wenjia.lu.71">Follow me on Ins</a></div>
+              <div class="small text-black-50"><a href="facebook.com/wenjia.lu.71">Follow me on fb</a></div>
             </div>
           </div>
         </div>
