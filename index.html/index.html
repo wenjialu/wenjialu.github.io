@@ -1,432 +1,1208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
+  <!-- Milky Way full-site variant -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#050607" />
+  <meta name="description" content="Elsa (Wenjia) Lu — software engineer, founder, and builder at the intersection of AI, psychology, and human connection." />
+  <title>Elsa Lu — Galaxy Portfolio Preview</title>
+  <style>
+    :root{
+      --bg:#03040a;
+      --bg-2:#080d1d;
+      --paper:#f7f2e9;
+      --ink:#f5f1eb;
+      --muted:#a8acbd;
+      --line:rgba(255,255,255,.11);
+      --coral:#d59a8d;
+      --gold:#d8c79c;
+      --lav:#8178c9;
+      --mint:#8fd8c8;
+      --card:rgba(255,255,255,.055);
+      --shadow:0 28px 90px rgba(0,0,0,.32);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(ellipse at 18% 5%, rgba(96,96,128,.24) 0%, rgba(17,17,29,.08) 28%, transparent 52%),
+        radial-gradient(ellipse at 82% 12%, rgba(112,96,128,.22) 0%, rgba(23,21,37,.08) 30%, transparent 54%),
+        radial-gradient(ellipse at 54% 46%, rgba(128,112,144,.14) 0%, transparent 40%),
+        radial-gradient(ellipse at 28% 84%, rgba(96,96,128,.10) 0%, transparent 42%),
+        linear-gradient(180deg,
+          #050607 0%,
+          #0d0e17 18%,
+          #11111d 34%,
+          #171525 52%,
+          #1a1b2b 69%,
+          #131321 84%,
+          #0d0e17 100%);
+      background-attachment:fixed;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.12;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+      mix-blend-mode:soft-light;
+      z-index:100;
+    }
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button{color:inherit}
+    .container{width:min(1180px,calc(100% - 44px));margin:auto}
+    .nav{
+      position:fixed;
+      left:0;right:0;top:0;
+      z-index:80;
+      transition:.25s ease;
+    }
+    .nav.scrolled{
+      backdrop-filter:blur(18px);
+      background:rgba(13,15,29,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{display:flex;align-items:center;gap:11px;font-weight:750;letter-spacing:-.03em}
+    .brand-dot{
+      width:34px;height:34px;border-radius:50%;
+      display:grid;place-items:center;
+      color:#161729;
+      background:linear-gradient(135deg,var(--gold),#fff0ba);
+      box-shadow:0 10px 25px rgba(223,196,125,.2);
+      font-weight:850;
+    }
+    .nav-links{display:flex;gap:26px;align-items:center;font-size:14px;color:#c7cad7}
+    .nav-links a{position:relative}
+    .nav-links a::after{
+      content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--coral);transition:.25s
+    }
+    .nav-links a:hover::after{right:0}
+    .nav-cta{
+      padding:10px 16px;border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid var(--line);
+    }
+    .hero{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+      padding:120px 0 70px;
+      isolation:isolate;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:940px;height:640px;
+      left:-290px;top:-5%;
+      border-radius:50%;
+      background:
+        radial-gradient(ellipse at 56% 46%,
+          rgba(96,96,128,.26) 0%,
+          rgba(96,96,128,.15) 28%,
+          rgba(32,29,49,.06) 50%,
+          transparent 74%);
+      filter:blur(56px);
+      opacity:.88;
+      transform:rotate(-10deg);
+      pointer-events:none;
+      z-index:0;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:900px;height:620px;
+      right:-285px;top:5%;
+      border-radius:50%;
+      background:
+        radial-gradient(ellipse at 43% 49%,
+          rgba(128,112,144,.22) 0%,
+          rgba(112,96,128,.14) 34%,
+          rgba(39,40,63,.05) 56%,
+          transparent 74%);
+      filter:blur(58px);
+      opacity:.84;
+      transform:rotate(14deg);
+      pointer-events:none;
+      z-index:0;
+    }
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    .galaxy-band{
+      position:absolute;
+      width:145%;
+      height:340px;
+      left:-22%;
+      top:26%;
+      transform:rotate(-13deg);
+      background:
+        linear-gradient(90deg,
+          transparent 0%,
+          rgba(96,96,128,.035) 10%,
+          rgba(112,96,128,.12) 30%,
+          rgba(128,112,144,.16) 46%,
+          rgba(112,96,128,.13) 61%,
+          rgba(96,96,128,.07) 76%,
+          transparent 100%);
+      filter:blur(34px);
+      opacity:.94;
+      pointer-events:none;
+      z-index:0;
+      mix-blend-mode:screen;
+    }
 
-  <title>Wenjia lu's universe</title>
+    #universe{
+      position:absolute;inset:0;width:100%;height:100%;
+      opacity:1;
+      mix-blend-mode:screen;
+      z-index:0;
+    }
+    .cursor-glow{
+      position:absolute;width:560px;height:560px;border-radius:50%;
+      background:
+        radial-gradient(circle at center,
+          rgba(128,112,144,.08) 0%,
+          rgba(112,96,128,.055) 28%,
+          rgba(96,96,128,.03) 48%,
+          transparent 72%);
+      filter:blur(26px);
+      transform:translate(-50%,-50%);
+      pointer-events:none;
+      z-index:1;
+      transition:opacity .2s;
+      mix-blend-mode:screen;
+    }
+    .hero-grid{
+      position:relative;z-index:2;
+      display:grid;
+      grid-template-columns:1.14fr .86fr;
+      align-items:center;
+      gap:70px;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.035);
+      color:#d5d8e4;
+      font-size:13px;
+    }
+    .live-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px rgba(143,216,200,.11)}
+    h1{
+      margin:26px 0 22px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(58px,8vw,112px);
+      line-height:.91;
+      font-weight:500;
+      letter-spacing:-.065em;
+    }
+    h1 em{font-weight:500;color:var(--coral)}
+    .hero-copy{
+      max-width:710px;
+      color:#c2c5d1;
+      font-size:clamp(18px,2vw,22px);
+      line-height:1.65;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .btn{
+      min-height:52px;
+      padding:0 21px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      cursor:pointer;
+      transition:transform .2s,box-shadow .2s,background .2s;
+      background:rgba(255,255,255,.045);
+    }
+    .btn:hover{transform:translateY(-3px)}
+    .btn-primary{
+      color:#151626;
+      background:linear-gradient(135deg,#fff2ca,var(--gold));
+      border-color:transparent;
+      box-shadow:0 18px 44px rgba(223,196,125,.16);
+      font-weight:750;
+    }
+    .btn-ghost:hover{background:rgba(255,255,255,.08)}
+    .hero-meta{
+      margin-top:24px;
+      display:flex;gap:18px;flex-wrap:wrap;
+      color:#888e9f;font-size:13px;
+    }
+    .hero-art{
+      position:relative;
+      min-height:560px;
+      display:grid;place-items:center;
+    }
+    .orbit{
+      position:relative;
+      width:min(470px,86vw);
+      aspect-ratio:1;
+      border:1px solid rgba(202,199,255,.18);
+      border-radius:50%;
+      box-shadow:0 0 90px rgba(116,104,255,.08), inset 0 0 65px rgba(255,255,255,.025);
+      animation:spin 28s linear infinite;
+    }
+    .orbit::before,.orbit::after{
+      content:"";
+      position:absolute;
+      inset:14%;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:50%;
+    }
+    .orbit::after{inset:30%;border-color:rgba(238,141,120,.18)}
+    .core{
+      position:absolute;inset:34%;
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 35% 25%,rgba(255,255,255,.85),transparent 15%),
+        linear-gradient(145deg,#ef9e88,#b7a6ff 52%,#e3c677);
+      box-shadow:inset 0 0 54px rgba(255,255,255,.46),0 0 55px rgba(255,211,177,.18),0 40px 110px rgba(137,120,255,.34);
+      animation:float 6s ease-in-out infinite;
+    }
+    .orbit-chip{
+      position:absolute;
+      padding:11px 14px;
+      border-radius:999px;
+      background:rgba(19,22,39,.88);
+      border:1px solid var(--line);
+      backdrop-filter:blur(12px);
+      color:#d5d7df;
+      font-size:13px;
+      white-space:nowrap;
+      box-shadow:var(--shadow);
+      animation:counterspin 28s linear infinite;
+    }
+    .chip-1{left:-7%;top:23%}
+    .chip-2{right:-12%;top:16%}
+    .chip-3{right:-5%;bottom:22%}
+    .chip-4{left:-10%;bottom:17%}
+    .scroll-cue{
+      position:absolute;z-index:3;
+      bottom:25px;left:50%;transform:translateX(-50%);
+      color:#808596;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+      display:grid;justify-items:center;gap:8px;
+    }
+    .scroll-cue span{width:1px;height:34px;background:linear-gradient(var(--muted),transparent);animation:pulse 2s infinite}
+    section{padding:115px 0;position:relative}
+    .section-kicker{font-size:12px;letter-spacing:.17em;text-transform:uppercase;color:var(--coral);font-weight:800}
+    .section-title{
+      margin:13px 0 18px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(42px,5.6vw,74px);
+      line-height:1.02;
+      font-weight:500;
+      letter-spacing:-.045em;
+    }
+    .section-copy{max-width:720px;color:var(--muted);font-size:18px;line-height:1.7}
+    .now-grid{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center;
+    }
+    .now-panel{
+      min-height:520px;
+      position:relative;
+      border-radius:36px;
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at 35% 38%,rgba(238,141,120,.15),transparent 31%),
+        radial-gradient(circle at 70% 64%,rgba(169,167,255,.12),transparent 35%),
+        rgba(255,255,255,.035);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .mind-node{
+      position:absolute;
+      padding:13px 16px;border-radius:18px;
+      background:rgba(17,20,36,.78);
+      border:1px solid var(--line);
+      color:#d4d7e2;
+      backdrop-filter:blur(10px);
+      transition:.25s ease;
+      cursor:default;
+      font-size:13px;
+    }
+    .mind-node:hover{transform:scale(1.06) rotate(-1deg);border-color:rgba(238,141,120,.38);color:white}
+    .n1{left:8%;top:13%}.n2{right:8%;top:20%}.n3{left:22%;top:47%}.n4{right:14%;bottom:15%}.n5{left:8%;bottom:18%}
+    .inner-one-core{
+      position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+      width:145px;height:145px;border-radius:50%;
+      display:grid;place-items:center;text-align:center;
+      color:#121423;font-family:Georgia,serif;font-size:25px;
+      background:linear-gradient(145deg,#ffe7db,#f6c69c 48%,#c3baff);
+      box-shadow:0 30px 80px rgba(238,141,120,.22);
+    }
+    .tag-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
+    .tag{padding:8px 11px;border:1px solid var(--line);border-radius:999px;color:#aeb3c1;font-size:12px}
+    .experience-list{margin-top:56px;border-top:1px solid var(--line)}
+    .exp{
+      display:grid;
+      grid-template-columns:150px 1fr 44px;
+      gap:28px;
+      padding:29px 0;
+      border-bottom:1px solid var(--line);
+      transition:.25s ease;
+      cursor:pointer;
+    }
+    .exp:hover{padding-left:14px}
+    .exp-year{color:#7e8497;font-size:13px;padding-top:5px}
+    .exp h3{margin:0;font-size:22px;letter-spacing:-.02em}
+    .exp-role{color:var(--coral);font-size:14px;margin:5px 0 9px}
+    .exp p{margin:0;color:var(--muted);max-width:760px;line-height:1.65}
+    .exp-plus{
+      width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+      display:grid;place-items:center;color:#aaaebe;transition:.25s;
+    }
+    .exp:hover .exp-plus{transform:rotate(45deg);background:rgba(255,255,255,.06)}
+    .exp-details{
+      grid-column:2 / 3;
+      display:grid;grid-template-rows:0fr;
+      transition:grid-template-rows .35s ease;
+    }
+    .exp.open .exp-details{grid-template-rows:1fr}
+    .exp-details > div{overflow:hidden}
+    .exp-details ul{margin:14px 0 0;padding-left:18px;color:#a9adba;line-height:1.8}
+    .journey{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px;
+    }
+    .edu-card,.project-card{
+      border:1px solid var(--line);border-radius:28px;background:var(--card);
+      padding:28px;transition:.25s ease;position:relative;overflow:hidden;
+    }
+    .edu-card:hover,.project-card:hover{transform:translateY(-5px);border-color:rgba(238,141,120,.28)}
+    .edu-card small,.project-card small{color:#858b9c}
+    .edu-card h3,.project-card h3{margin:28px 0 7px;font-family:Georgia,serif;font-size:28px;font-weight:500}
+    .edu-card p,.project-card p{margin:0;color:var(--muted);line-height:1.65}
+    .project-card.featured{
+      grid-column:1/-1;
+      min-height:350px;
+      display:grid;grid-template-columns:1fr .82fr;gap:45px;align-items:center;
+      background:
+        radial-gradient(circle at 80% 30%,rgba(238,141,120,.14),transparent 30%),
+        linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+    }
+    .project-signal{
+      height:250px;position:relative;border-radius:24px;border:1px solid var(--line);overflow:hidden;background:#111426;
+    }
+    .signal-wave{
+      position:absolute;left:-10%;right:-10%;top:50%;height:2px;background:linear-gradient(90deg,transparent,var(--coral),var(--lav),transparent);
+      box-shadow:0 0 30px rgba(169,167,255,.4);
+      animation:wave 3s ease-in-out infinite;
+    }
+    .signal-dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 20px var(--gold)}
+    .signal-dot:nth-child(2){left:20%;top:28%}.signal-dot:nth-child(3){left:72%;top:67%}.signal-dot:nth-child(4){left:52%;top:18%}
+    .contact-shell{
+      width:min(980px,calc(100% - 44px));
+      margin:0 auto;
+      display:block;
+      padding:0;
+      border-radius:0;
+      background:transparent;
+      border:0;
+      box-shadow:none;
+      backdrop-filter:none;
+      color:#f4f5fb;
+      min-height:0;
+    }
+    .contact-shell .section-kicker{color:#b9bfd2}
+    .contact-shell .section-title{
+      color:#fafafa;
+      max-width:760px;
+      margin-bottom:26px;
+    }
+    .contact-shell .section-copy{
+      max-width:860px;
+      color:#bcc2d4;
+      font-size:clamp(18px,2.1vw,23px);
+      line-height:1.72;
+    }
+    .contact-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:34px;
+      margin-bottom:58px;
+    }
+    .contact-btn{
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      border:1px solid rgba(215,220,239,.18);
+      background:rgba(255,255,255,.045);
+      color:#f1f3f9;
+      cursor:pointer;
+      transition:transform .22s ease,background .22s ease,border-color .22s ease,box-shadow .22s ease;
+      backdrop-filter:blur(8px);
+      font-size:16px;
+    }
+    .contact-btn:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.075);
+      border-color:rgba(224,229,247,.28);
+      box-shadow:0 12px 30px rgba(0,0,0,.18);
+    }
+    .message-form{
+      width:100%;
+      background:rgba(9,10,17,.46);
+      border-radius:34px;
+      padding:34px 48px 48px;
+      border:1px solid rgba(128,112,144,.18);
+      display:grid;
+      gap:18px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+      backdrop-filter:blur(10px);
+    }
+    .message-form label{
+      font-size:13px;
+      color:#bdc3d6;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      margin-top:2px;
+    }
+    .message-form input,.message-form textarea{
+      width:100%;
+      border:1px solid rgba(128,112,144,.18);
+      outline:none;
+      border-radius:22px;
+      padding:17px 20px;
+      background:rgba(3,6,16,.48);
+      color:#f4f6fb;
+      font-size:17px;
+      transition:border-color .2s ease,background .2s ease,box-shadow .2s ease;
+    }
+    .message-form input{
+      min-height:60px;
+    }
+    .message-form textarea{
+      min-height:180px;
+      resize:vertical;
+    }
+    .message-form input::placeholder,.message-form textarea::placeholder{
+      color:#7d86a4;
+    }
+    .message-form input:focus,.message-form textarea:focus{
+      border-color:rgba(153,166,215,.34);
+      background:rgba(7,10,23,.66);
+      box-shadow:0 0 0 3px rgba(112,96,128,.08);
+    }
+    .message-form button{
+      border:1px solid rgba(226,218,184,.22);
+      border-radius:22px;
+      min-height:60px;
+      background:linear-gradient(90deg,#e2d5ac 0%,#d7d0c5 45%,#bcb6de 100%);
+      color:#131726;
+      cursor:pointer;
+      font-weight:850;
+      font-size:17px;
+      box-shadow:0 12px 30px rgba(151,145,190,.12);
+      transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+    }
+    .message-form button:hover{
+      transform:translateY(-2px);
+      box-shadow:0 17px 38px rgba(151,145,190,.18);
+      filter:brightness(1.035);
+    }
+    footer{padding:30px 0 48px;color:#7e8494;font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .chat-launch{
+      position:fixed;left:22px;bottom:22px;z-index:90;
+      width:58px;height:58px;border-radius:50%;
+      display:grid;place-items:center;cursor:pointer;
+      border:1px solid rgba(255,255,255,.18);
+      background:linear-gradient(145deg,#232640,#151728);
+      box-shadow:0 18px 55px rgba(0,0,0,.4);
+      color:white;font-size:20px;
+    }
+    .chat-launch::after{
+      content:"Ask my AI";
+      position:absolute;left:69px;white-space:nowrap;
+      padding:8px 11px;border-radius:999px;background:#1a1d31;border:1px solid var(--line);
+      font-size:12px;color:#d5d7e0;opacity:0;transform:translateX(8px);pointer-events:none;transition:.2s;
+    }
+    .chat-launch:hover::after{opacity:1;transform:none}
+    .chat{
+      position:fixed;left:22px;bottom:92px;z-index:91;
+      width:min(380px,calc(100% - 28px));height:540px;
+      border-radius:26px;border:1px solid var(--line);
+      background:rgba(16,18,32,.95);backdrop-filter:blur(20px);
+      box-shadow:0 30px 100px rgba(0,0,0,.55);
+      display:grid;grid-template-rows:auto 1fr auto;
+      overflow:hidden;opacity:0;transform:translateY(18px) scale(.97);pointer-events:none;transition:.25s ease;
+    }
+    .chat.open{opacity:1;transform:none;pointer-events:auto}
+    .chat-head{padding:17px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+    .chat-head strong{display:block}.chat-head small{color:#888ea0}
+    .chat-close{border:0;background:none;color:#9ea3b3;cursor:pointer;font-size:20px}
+    .chat-log{padding:18px;overflow:auto;display:flex;flex-direction:column;gap:12px}
+    .bubble{max-width:86%;padding:11px 13px;border-radius:16px;line-height:1.5;font-size:14px}
+    .bubble.bot{align-self:flex-start;background:rgba(255,255,255,.07);color:#d6d9e3;border-bottom-left-radius:5px}
+    .bubble.user{align-self:flex-end;background:#f0cf93;color:#222437;border-bottom-right-radius:5px}
+    .quick{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+    .quick button{border:1px solid var(--line);background:transparent;color:#acb0bd;border-radius:999px;padding:7px 9px;font-size:11px;cursor:pointer}
+    .chat-form{padding:13px;border-top:1px solid var(--line);display:flex;gap:8px}
+    .chat-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05);color:white;padding:11px 14px;outline:none}
+    .chat-form button{width:42px;border:0;border-radius:50%;background:var(--gold);color:#171827;cursor:pointer}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes counterspin{to{transform:rotate(-360deg)}}
+    @keyframes float{50%{transform:translateY(-12px) scale(1.03)}}
+    @keyframes pulse{50%{opacity:.25;transform:scaleY(.65)}}
+    @keyframes wave{50%{transform:translateY(-35px) rotate(-3deg)}}
+    @media(max-width:900px){
+      .nav-links a:not(.nav-cta){display:none}
+      .hero-grid,.now-grid,.contact-shell{grid-template-columns:1fr}
+      .hero{padding-top:120px}
+      .hero-art{min-height:430px}
+      .now-grid{gap:35px}
+      .project-card.featured{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      .container{width:min(100% - 26px,1180px)}
+      .nav-inner{min-height:68px}
+      .brand-dot{width:31px;height:31px}
+      h1{font-size:clamp(54px,16vw,76px)}
+      .hero-copy{font-size:17px}
+      .hero-actions .btn{width:100%}
+      .hero-art{min-height:360px}
+      .orbit{width:310px}
+      .orbit-chip{font-size:11px;padding:9px 11px}
+      section{padding:82px 0}
+      .section-title{font-size:clamp(39px,12vw,54px)}
+      .section-copy{font-size:16px}
+      .now-panel{min-height:430px}
+      .inner-one-core{width:118px;height:118px;font-size:21px}
+      .mind-node{font-size:11px;padding:10px 12px}
+      .exp{grid-template-columns:1fr 38px;gap:10px 14px}
+      .exp-year{grid-column:1/-1}
+      .exp-details{grid-column:1/-1}
+      .journey{grid-template-columns:1fr}
+      .project-card.featured{grid-column:auto}
+      .contact-shell{padding:28px 20px;border-radius:28px}
+      .footer-inner{flex-direction:column}
+      .chat{left:14px;right:auto;bottom:86px;height:min(560px,72vh)}
+      .chat-launch{left:14px;right:auto;bottom:16px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+    }
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    @media (pointer:fine){
+      body, a, button, input, textarea, .exp, .project-card, .edu-card { cursor:none !important; }
+    }
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    .star-cursor{
+      position:fixed;
+      left:0; top:0;
+      width:14px; height:14px;
+      pointer-events:none;
+      z-index:120;
+      transform:translate(-50%,-50%);
+      mix-blend-mode:screen;
+      transition:opacity .18s ease;
+    }
+    .star-cursor::before{
+      content:"";
+      position:absolute;
+      left:50%; top:50%;
+      width:3.5px; height:3.5px;
+      margin:-1.75px 0 0 -1.75px;
+      border-radius:50%;
+      background:rgba(255,250,229,.98);
+      box-shadow:
+        0 0 5px rgba(255,248,219,.95),
+        0 0 11px rgba(198,214,255,.56),
+        0 0 20px rgba(145,166,230,.25);
+    }
+    .star-cursor::after{
+      content:"";
+      position:absolute;
+      left:50%; top:50%;
+      width:9px; height:9px;
+      margin:-4.5px 0 0 -4.5px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(228,236,255,.20) 0%, rgba(194,211,255,.08) 38%, transparent 72%);
+      filter:blur(1px);
+    }
+    .star-cursor .diag{ display:none; }
+    .star-cursor .halo{
+      position:absolute;
+      inset:-8px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(185,205,255,.10) 0%, rgba(255,231,190,.06) 28%, transparent 68%);
+      animation:starPulse 2.9s ease-in-out infinite;
+    }
+    @keyframes starPulse{
+      50%{ transform:scale(1.16); opacity:.72; }
+    }
 
-  <!-- Custom styles for this template -->
-  <link href="css/grayscale.css" rel="stylesheet">
 
+    .tilt{
+      transform-style:preserve-3d;
+      will-change:transform;
+      transition:transform .18s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .tilt:hover{
+      box-shadow:0 24px 60px rgba(0,0,0,.26);
+    }
+    .project-card.featured:hover .signal-wave{
+      animation-duration:1.9s;
+    }
+    .btn{
+      position:relative;
+      overflow:hidden;
+    }
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:-120% auto auto -40%;
+      width:55%;
+      height:300%;
+      transform:rotate(24deg);
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent);
+      transition:transform .55s ease;
+      pointer-events:none;
+    }
+    .btn:hover::before{
+      transform:translateX(220%) rotate(24deg);
+    }
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168901127-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-168901127-1');
-  </script>
-
-  <!-- comment gittalk -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
- 
-  <!--Gitment 是作者实现的一款基于 GitHub Issues 的评论系统
-        简介 https://imsun.net/posts/gitment-introduction/-->
-      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-      <script>
-      var gitment = new Gitment({
-        // id: '页面 ID',  可选。默认为 location.href 
-        owner: 'wenijalu',
-        repo: '存储评论的 repo',
-        oauth: {
-          client_id: '2a6ce13efa101024f112',
-          client_secret: '03de55ca0600329e19c8e73e44ab7fa65592338d',
-        },
-      })
-gitment.render('container')
-      </script> 
-
-  <!--Daovoice user analysis-->
-  <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/b5587551.js","daovoice")</script>
-
-    
-  <!--daovoice-->
-  <script>
-  daovoice('init', {
-    app_id: "b5587551",
-    user_id: "{{ current_user.user_id }}", // 必填: 该用户在您系统上的唯一ID
-    email: "{{ current_user.email }}", // 选填:  该用户在您系统上的主邮箱
-    name: "{{ current_user.name }}", // 选填: 用户名
-    signed_up: {{ current_user.signed_up }} // 选填: 用户的注册时间，用Unix时间戳表示
-    });
-  daovoice('update');
-</script>
-  <script>
-  daovoice('init', {
-    app_id: "b5587551"
-  });
-  daovoice('update');
-</script>
+  </style>
+  <!-- Contact layout refined to screenshot reference: galaxy -->
+  <!-- Galaxy palette tuned to the user's dark violet Milky Way reference -->
+  <!-- Palette uses requested galaxy mist colors #606080 #706080 #807090 -->
 </head>
-
-
-  <!--call-->
-<script type="text/javascript">
-  (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
-  'https://academe.ladesk.com/scripts/track.js',
-  function(e){ LiveAgent.createButton('rggaz4gf', e); });
-  </script>
-
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Wenjia lu's universe</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#projects">All about Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#comment">Comment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
-          </li>
-        </ul>
+<body>
+  <div class="star-cursor" id="starCursor" aria-hidden="true"><div class="halo"></div></div>
+  <!-- Redesign based on the live index.html/index.html source; existing chat integrations preserved. -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top"><span class="brand-dot">L</span><span>Elsa Lu</span></a>
+      <div class="nav-links">
+        <a href="#now">Now</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#education">Education</a>
+        <a class="nav-cta" href="#contact">Say hello ↗</a>
       </div>
     </div>
   </nav>
 
-  
-
-
-  <!-- Header -->
-  <header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Hi, I am lu </h1>
-        <h2 class="text-white-50 mx-auto mt-2 mb-5">A big weclome! You find my universe!</h2>
-        <a href="#about" class="btn btn-primary js-scroll-trigger">Get ready to explore</a>
-      </div>
-    </div>
-  </header>
-
-
-
-
-   <!--其他统计，如单页面统计见：https://qchaha.github.io/2018/09/19/homepageStatistics.html
-      该作者用jedlly创建的网站。。。才有_config.yml-->   
-        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <p class="text-black-50"> 
-        <span id="busuanzi_container_site_pv">Total visits: <span id="busuanzi_value_site_pv"></span> times</span> <br>
-        <span id="busuanzi_container_site_uv">Total visistors: <span id="busuanzi_value_site_uv"></span> people</span> 
-        <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <span id="busuanzi_value_page_pv">本文总阅读量<i class="fa fa-spinner fa-spin"></i>次</span>
-        -->
-    <!--评论功能-->
-    <!--https://qchaha.github.io/2018/09/17/disqus.html-->
-
-
-  <!-- About Section -->
-  <section id="about" class="about-section text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="text-black mb-4">I am a little geek👩‍💻👩‍🔬, <br> being fascinated by New Tech!</h2>
-          <p class="text-black-50"> 
-            <!-- Here would be a little fancy gif. -->
-          <ul>Programming and Psychology have occupied an important place in my life. 
-            <br>As for coding, I learn them via Projects. you can view some of my tutorials from: 
-            <br><a href="https://wenjialu.github.io/hexo-blog/">My technology blog</a></ul>
-            <!--below are some contents for my blog: -->
-          <!-- https://github.com/niudai/How-to-be-a-good-programmer -->    
-          <!-- <h5><li><a href='../prog_learing_routine.html'>my_coding_path</a></li></h5>  -->
-           <!-- <ul>future experience：Huawei cloud☁️</ul> -->
-            </p>
+  <main id="top">
+    <section class="hero">
+      <div class="galaxy-band" aria-hidden="true"></div>
+      <canvas id="universe" aria-hidden="true"></canvas>
+      <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="reveal visible">
+          <div class="eyebrow"><span class="live-dot"></span> Software engineer → founder · building Inner One</div>
+          <h1>Hi, I’m Elsa.<br>I build <em>human-centered</em> AI.</h1>
+          <p class="hero-copy">I’m a software engineer and founder working at the intersection of AI, psychology, and human connection — building thoughtful, warm technology that helps people understand themselves, navigate relationships, and make clearer decisions.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">Explore what I’m building ↘</a>
+            <button class="btn btn-ghost" id="heroChat">Ask my portfolio AI ✦</button>
+          </div>
+          <div class="hero-meta">
+            <span>Amazon · 2022–2026</span>
+            <span>Inner One · Founder</span>
+            <span>Psychology × Engineering</span>
+          </div>
         </div>
-      </div>
-       <a href="https://www.notion.so/Neuro-journey-1e1f0d5143f34c1eab37f24a4115f51a"><img src="img/fp1.png" class="img-fluid" alt=""></a>
-       <!-- <div class="col-xl-4 col-lg-5"> -->
-         <!-- <div class="featured-text text-center text-lg-left">   -->
-        <div  class="text-black-50" >
-          <!-- #我想要居中对齐的效果 -->
-        <br>
-        <ul>I also consider the idea of being a neuroscientist👩‍🔬 is extremly cool, 
-          and I may spend the rest of my life to pursue it!</ul>
-        <ul> Above 👆 are my notes for my neuroscience learing~</ul>
-         </p>
-    
-      </div>
-  </section>
 
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects-section bg-light">
-    <div class="container">
-
-      <!-- Featured Project Row -->
-      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-        <div class="col-xl-8 col-lg-7">
-         <a href="../cv/index.html"><img class="img-fluid mb-3 mb-lg-0" src="img/resume.png" alt=""></a>
-        </div>
-        <div class="col-xl-4 col-lg-5">
-          <div class="featured-text text-center text-lg-left">
-            <h4>My working experience</h4>
-            <p class="text-black-50 mb-0">
-              If you are an employer. You would definitly be interested in this:
-            <a href="../cv/index.html"> My Resume</a>. Thank your viewing and 
-            I'd appreciate it very much if you are willing to give me any advise or give me a <a href="../cv/index.html"> job opportunity. </a></p>
-             </p>
-            
-           
+        <div class="hero-art reveal visible">
+          <div class="orbit">
+            <div class="core"></div>
+            <div class="orbit-chip chip-1">AI systems</div>
+            <div class="orbit-chip chip-2">Psychology</div>
+            <div class="orbit-chip chip-3">Human connection</div>
+            <div class="orbit-chip chip-4">0 → 1 products</div>
           </div>
         </div>
       </div>
+      <div class="scroll-cue">scroll<span></span></div>
+    </section>
 
-      <!-- Project One Row -->
-      <!-- <div class="row justify-content-center no-gutters mb-5 mb-lg-0"> -->
-      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-      <div class="col-xl-8 col-lg-7">
-      <!-- <a href="https://wenjialu.github.io/reading_process_omni.html/index.html"> <img class="img-fluid" src="img/demo-image-01-full.jpg" alt=""></a> -->
-      <!-- https://tva1.sinaimg.cn/large/008i3skNgy1gwxt9714voj31240kxdi1.jpg; https://tva1.sinaimg.cn/large/008i3skNgy1gwxssrsuvgj31290l4t9k.jpg blog pic  -->
-        <a href="https://wenjialu.github.io/hexo-blog/"><img class="img-fluid mb-3 mb-lg-0" src="img/tech1.png" alt=""></a>
-   
-    </div>
-      <div class="col-xl-4 col-lg-5">
-      <!--<div class="bg-orange text-center h-100 project"> --><!--"featured-text_l text-center text-lg-left"-->
-        <!-- <div class="d-flex h-100"> -->
-          <!-- <div class="project-text w-100 my-auto text-center text-lg-left"> -->
-          <div class="featured-text text-center text-lg-left">
-             <h4  class="text-black">I might be a "master" in studing study</h4>
-             <hr class="d-none d-lg-block mb-0 ml-0">
-        <p class="mb-0 text-black-50">Here is my journey of study.        
-         <h5><li><a href="https://wenjialu.github.io/hexo-blog/">My technology blog</a></li></h5>    
-         <h5><li><a href=""> Psychology</a></li></h5>  <!-- + 幕布/讯飞   :心理学学习路径-->
-         <h5><li> <a href="https://wenjialu.github.io/reading_process_omni.html/index.html">Resourses: Always learn from the best </a></li></h5>
-            <!-- 这是omini，也可以考虑写成github文档 -->
-        </p>  
-              
+    <section id="now">
+      <div class="container now-grid">
+        <div class="reveal">
+          <div class="section-kicker">What I’m doing now</div>
+          <h2 class="section-title">Building technology that feels more human.</h2>
+          <p class="section-copy">I’m building <a href="https://innerone.life/" target="_blank" rel="noopener" style="color:#fff;font-weight:700;text-decoration:underline;text-decoration-color:rgba(216,199,156,.5);text-underline-offset:5px;">Inner One ↗</a>, a family of personal AI products for the questions people carry quietly: relationships, emotional patterns, difficult conversations, and the choices that shape a life.</p>
+          <div class="tag-row">
+            <span class="tag">Founder</span>
+            <span class="tag">Product</span>
+            <span class="tag">AI / LLM</span>
+            <span class="tag">Consumer</span>
+            <span class="tag">Human-centered UX</span>
+          </div>
+          <div class="hero-actions" style="margin-top:22px">
+            <a class="btn btn-primary" href="https://innerone.life/" target="_blank" rel="noopener">Visit Inner One ↗</a>
+          </div>
+        </div>
+        <div class="now-panel reveal tilt" id="mindPanel">
+          <div class="inner-one-core">Inner<br>One</div>
+          <div class="mind-node n1">“Am I overthinking?”</div>
+          <div class="mind-node n2">“How do I say this?”</div>
+          <div class="mind-node n3">“Why do I repeat this pattern?”</div>
+          <div class="mind-node n4">“What should I do next?”</div>
+          <div class="mind-node n5">“Who am I becoming?”</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-kicker reveal">Experience</div>
+        <h2 class="section-title reveal">From large-scale systems to a company of my own.</h2>
+        <p class="section-copy reveal">I spent nearly four years at Amazon building personalization and conversational advertising experiences before moving into founder mode.</p>
+
+        <div class="experience-list">
+          <article class="exp reveal">
+            <div class="exp-year">2026 — now</div>
+            <div>
+              <h3>Inner One</h3>
+              <div class="exp-role">Founder · Product & Engineering</div>
+              <p>Building personal AI products designed around real human moments — starting with relationship clarity and emotional decision-making.</p>
+              <div class="exp-details"><div><ul>
+                <li>Own product strategy, UX, engineering, research, and go-to-market.</li>
+                <li>Exploring longitudinal personal intelligence: turning repeated moments into useful patterns, not just one-off chatbot answers.</li>
+                <li>Designing narrow, high-intent consumer experiences that can expand into a broader personal model over time.</li>
+              </ul></div></div>
             </div>
-          </div>
+            <div class="exp-plus">+</div>
+          </article>
+
+          <article class="exp reveal">
+            <div class="exp-year">2024 — 2026</div>
+            <div>
+              <h3>Amazon · Alexa+</h3>
+              <div class="exp-role">Software Development Engineer · Conversational Ads</div>
+              <p>Built conversational advertising experiences across web, mobile, and Echo surfaces, helping take the project from confidential development to launch.</p>
+              <div class="exp-details"><div><ul>
+                <li>Worked on end-to-end customer experiences for a new conversational ads product.</li>
+                <li>Built and integrated production systems across multiple Alexa+ surfaces.</li>
+                <li>Partnered across engineering and product in a fast-moving, zero-to-one environment.</li>
+              </ul></div></div>
+            </div>
+            <div class="exp-plus">+</div>
+          </article>
+
+          <article class="exp reveal">
+            <div class="exp-year">2022 — 2024</div>
+            <div>
+              <h3>Amazon Ads</h3>
+              <div class="exp-role">Software Development Engineer · Personalization</div>
+              <p>Worked on advertising personalization systems, using large-scale signals to make ad experiences more relevant to individual users.</p>
+              <div class="exp-details"><div><ul>
+                <li>Built backend systems supporting user personalization for advertising products.</li>
+                <li>Worked with experimentation and production-scale data flows.</li>
+                <li>Developed the engineering foundation that later shaped my interest in personal AI.</li>
+              </ul></div></div>
+            </div>
+            <div class="exp-plus">+</div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- Project Two Row -->
-      <!-- <div class="row justify-content-center no-gutters">
-        <div class="col-lg-6">
-          <img class="img-fluid" src="img/demo-image-02-full_mosaic.png" alt="">
-        可以换成跳舞💃的照片,然后文字部分加点vlog链接🔗  -->
-        <!-- </div>    -->
-        <!-- #换个好看点的样式 -->
-        <!-- <div class="col-lg-6 order-lg-first">
-          <div class="bg-orange text-center h-100 project">-->
-            <!--"featured-text_r text-center text-lg-right"-->
-            <!-- <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-left">
-                 <h4 class="text-black">My interests: The higlights in my life</h4>
-                <hr class="d-none d-lg-block mb-0 ml-0">
-                <p class="mb-0 text-black-50">
-                <li>You are what you read</li>
-                <ul><a href='../worthy_vedios.html '>my_reading_steward</a></ul>
-                ../myreading_steward.html 
-                <li>PhotoShop + AI + Latex</li>
-                <ul>one of my latex product is on the right➡️</ul>
-                <ul>tutorial blog
-                  my works . img would be put on later</ul> -->
-                <!-- <li>sketch*level 7</li> 
-                <li href="">K-POP</li>
-                <ul>
-                learned：boom boom; psycho；kill this love; fiesta; <br>
-                Siren；Gashina  <br>
-                whistle(bp); oh_my_god 
-              </ul>               
-                <ul>to be continue：don't know what to do; as if it's your last; icy(itzy)</ul>
-                <li>sports</li>
-                <ul>pool,deep diving,golf</ul>
-                <li>language</li>
-                 <ul>
-                <li>Japanese aim：N2</li>
-                <li>French aim：having a causal chat with some French when I am in France～
-                <ul>ps.I meet with some people who have a passion towards French ( An American, a British, a Swede, a German )weekly, and we just speak French(no matter how awkards it sounds).</ul>
-          </li> 
-                <hr class="d-none d-lg-block mb-0 mr-0">
-                </p>
+    <section id="work">
+      <div class="container">
+        <div class="section-kicker reveal">Selected work</div>
+        <h2 class="section-title reveal">Things I’m curious enough to build.</h2>
+        <div class="journey">
+          <a class="project-card featured reveal tilt" href="https://innerone.life/" target="_blank" rel="noopener" aria-label="Visit Inner One website">
+            <div>
+              <small>01 · CURRENT COMPANY</small>
+              <h3>Inner One</h3>
+              <p>A personal AI company exploring how technology can help people understand emotional patterns, relationships, and life choices — while strengthening human agency rather than replacing it.</p>
+              <div class="tag-row">
+                <span class="tag">Consumer AI</span><span class="tag">Personal intelligence</span><span class="tag">Founder-led</span>
               </div>
+              <div style="margin-top:24px;color:#d8c79c;font-size:14px;font-weight:700;">Visit innerone.life ↗</div>
             </div>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- </div>--> 
-    </section> 
-
-
-      <!-- Comment Section -->
-   <!-- <section id="comment" class="comment-section">
-    <div id="container"></div>
-      <div id="gitalk-container"></div> -->
-      
-      <!--
-      <div id="guestbook" class="item">
-        <h2>写新留言</h2>
-        <div class="item-content">
-          <div id="new-message">
-            <div id="step-1" class="inner-container">
-              <textarea id="message-content" placeholder="有什么想对我说的？畅所欲言吧" oninput="guestbook.contentDidChange(this)"></textarea>
-              <p>留言会公开显示哦。如果你不想发布公开留言，也可以发送邮件到 <a href="mailto:izoeyz@163.com">izoeyz@163.com</a> 与我联系。</p>
-              <button id="next-step-button" class="inactive" onclick="guestbook.next()">完成</button>
+            <div class="project-signal" aria-hidden="true">
+              <div class="signal-wave"></div>
+              <div class="signal-dot"></div><div class="signal-dot"></div><div class="signal-dot"></div>
             </div>
-            <div id="messages" class="item">
-              <h2>留言板</h2>
-              <div id="recent-messages" class="item-content"></div>
-              https://blog.dandyweng.com/messages/
-              <a href="" target="_blank">查看更多留言 &rsaquo;</a>
-            </div> -->
-            
-              <!--
-            <div id="step-2" class="inner-container">
-              <label for="message-name">昵称</label>
-              <input type="text" id="message-name" />
-              <p>留空视为匿名。</p>
+          </a>
 
-              <label for="message-email">邮件</label>
-              <input type="email" id="message-email" placeholder="john@example.com" />
-              <p>（选填）当这条留言收到回复时会发送邮件通知你，不会公开显示。</p>
-  
-              <label for="message-url">网站</label>
-              <input type="url" id="message-url" placeholder="https://example.com" />
-              <p>（选填）个人网站或社交网站主页均可。</p>
-  
-              <button onclick="guestbook.post(this)">保存</button>
-            </div>
-            <div id="step-3" class="inner-container">
-              <h3>你的留言已经保存。</h3>
-              <p>为防止广告信息，所有留言都会在审核之后才会公开显示。</p>-->
-            <!-- </div>
-          </div>
-        </div> -->
-      <!-- </div>
-    </div>
-   </section> -->
+          <a class="project-card reveal tilt" href="/hexo-blog/" target="_blank" rel="noopener">
+            <small>02 · WRITING & NOTES</small>
+            <h3>Technology blog ↗</h3>
+            <p>Notes, experiments, and things I learned by building — a continuation of the original “little geek” corner of my site.</p>
+          </a>
 
-
-
-
-
-  <!-- Signup Section -->
-  <section id="signup" class="signup-section" >
-  
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-lg-8 mx-auto text-center">
-
-          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-          <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-
-          <form class="form-inline d-flex">
-            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
-            <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
-          </form>
-
+          <a class="project-card reveal tilt" href="/cv" target="_blank" rel="noopener">
+            <small>03 · MORE DETAIL</small>
+            <h3>Resume ↗</h3>
+            <p>A more traditional view of my education, engineering experience, and professional work.</p>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-
-  <!-- Contact Section -->
-  <section class="contact-section bg-black">
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Linkedin</h4>
-              <hr class="my-4">
-              <div class="small text-black-50"><a href="https://www.linkedin.com/in/wenjialu/">Connect me on Linkedin</a></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-envelope text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Email</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">
-                <a1 href="#">izoeyz@163.com</a1>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-mobile-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">facebook</h4>
-              <hr class="my-4">
-              <div class="small text-black-50"><a href="facebook.com/wenjia.lu.71">Follow me on fb</a></div>
-            </div>
-          </div>
+    <section id="education">
+      <div class="container">
+        <div class="section-kicker reveal">Education</div>
+        <h2 class="section-title reveal">Engineering brain, psychology heart.</h2>
+        <div class="journey">
+          <article class="edu-card reveal tilt">
+            <small>2021 — 2022</small>
+            <h3>New York University</h3>
+            <p>Master’s degree · New York, NY</p>
+          </article>
+          <article class="edu-card reveal tilt">
+            <small>2019 — 2020</small>
+            <h3>University of Edinburgh</h3>
+            <p>Master’s in Psychology · Edinburgh, UK</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="social d-flex justify-content-center">
-        <a href="#" class="mx-2">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="mx-2">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="mx-2">
-          <i class="fab fa-github"></i>
-        </a>
+    <section id="contact">
+      <div class="container contact-shell reveal">
+        <div>
+          <div class="section-kicker">Say hello</div>
+          <h2 class="section-title">Good conversations often start with curiosity.</h2>
+          <p class="section-copy">If you’re building in AI, consumer products, psychology, relationships, or something delightfully weird, I’d love to hear from you.</p>
+          <div class="contact-actions">
+            <a class="contact-btn" href="mailto:contact@innerone.life">Email me ↗</a>
+            <a class="contact-btn" href="https://www.linkedin.com/in/wenjialu" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <button class="contact-btn" id="copyEmail">Copy email</button>
+          </div>
+        </div>
+        <form class="message-form" id="messageForm">
+          <label for="fromEmail">Your email</label>
+          <input id="fromEmail" type="email" placeholder="you@example.com" required>
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Hi Elsa — I found your universe..." required></textarea>
+          <button type="submit">Open in my email app ↗</button>
+        </form>
       </div>
+    </section>
+  </main>
 
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black small text-center text-white-50">
-    <div class="container">
-      Copyright &copy; Your Website 2020
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Build by Elsa Lu</span>
+      <span>Still fascinated by new tech — just building more of it now.</span>
     </div>
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <button class="chat-launch" id="chatLaunch" aria-label="Open portfolio assistant">✦</button>
+  <aside class="chat" id="chat" aria-label="Portfolio assistant">
+    <div class="chat-head">
+      <div><strong>Ask Elsa’s portfolio</strong><small>Amazon · Inner One · education · interests</small></div>
+      <button class="chat-close" id="chatClose" aria-label="Close">×</button>
+    </div>
+    <div class="chat-log" id="chatLog">
+      <div class="bubble bot">Hi — I’m Elsa’s portfolio assistant. Ask me what she built at Amazon, what Inner One is, or why psychology and software ended up in the same career.</div>
+      <div class="quick">
+        <button data-q="What did Elsa do at Amazon?">Amazon</button>
+        <button data-q="What is Inner One?">Inner One</button>
+        <button data-q="What is her background?">Background</button>
+      </div>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input id="chatInput" autocomplete="off" placeholder="Ask a question…" />
+      <button type="submit">↑</button>
+    </form>
+  </aside>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script>
+    const nav = document.getElementById('nav');
+    addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>18));
 
-  <!-- Custom scripts for this template -->
-  <script src="js/grayscale.min.js"></script>
+    // Reveal on scroll.
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);} });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el=>io.observe(el));
+
+    // Interactive timeline.
+    document.querySelectorAll('.exp').forEach(exp=>{
+      exp.addEventListener('click',()=>exp.classList.toggle('open'));
+    });
+
+    // Mind panel parallax.
+    const mind = document.getElementById('mindPanel');
+    if(mind){
+      mind.addEventListener('pointermove',e=>{
+        const r=mind.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+        mind.querySelectorAll('.mind-node').forEach((n,i)=>{
+          const f=(i%3+1)*4;
+          n.style.transform=`translate(${x*f}px,${y*f}px)`;
+        });
+      });
+      mind.addEventListener('pointerleave',()=>mind.querySelectorAll('.mind-node').forEach(n=>n.style.transform=''));
+    }
+
+    // Cursor star + soft ambient glow.
+    const glow=document.getElementById('cursorGlow');
+    const starCursor=document.getElementById('starCursor');
+    let cursorX=window.innerWidth/2, cursorY=window.innerHeight/2, starX=cursorX, starY=cursorY;
+
+    addEventListener('pointermove',e=>{
+      cursorX=e.clientX; cursorY=e.clientY;
+      glow.style.left=cursorX+'px';
+      glow.style.top=cursorY+'px';
+      starCursor.style.opacity='1';
+    });
+    addEventListener('pointerleave',()=>starCursor.style.opacity='.0');
+    function animateCursor(){
+      starX += (cursorX - starX) * 0.38;
+      starY += (cursorY - starY) * 0.38;
+      starCursor.style.left = starX + 'px';
+      starCursor.style.top = starY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Magnetic/tilt interactions.
+    document.querySelectorAll('.tilt').forEach(card=>{
+      card.addEventListener('pointermove',e=>{
+        const r=card.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-.5;
+        const y=(e.clientY-r.top)/r.height-.5;
+        card.style.transform=`perspective(900px) rotateX(${(-y*5).toFixed(2)}deg) rotateY(${(x*7).toFixed(2)}deg) translateY(-3px)`;
+      });
+      card.addEventListener('pointerleave',()=>{
+        card.style.transform='';
+      });
+    });
+
+    // Universe canvas — layered stars with soft color, glow, and twinkle.
+    const canvas=document.getElementById('universe'),ctx=canvas.getContext('2d');
+    let stars=[],dust=[],w=0,h=0,dpr=Math.min(devicePixelRatio||1,2),t=0,mouse={x:-9999,y:-9999,active:false};
+
+    function makeStar(bright=false){
+      const palette = [
+        [246,245,250],  // star white
+        [236,232,245],  // pale violet white
+        [226,228,240],  // cool grey-white
+        [207,204,226],  // muted lavender-white
+        [255,249,235]   // soft warm white
+      ];
+      const c=palette[Math.floor(Math.random()*palette.length)];
+      return {
+        x:Math.random()*w,
+        y:Math.random()*h,
+        r:bright ? (Math.random()*1.6+1.35) : (Math.random()*1.2+.22),
+        base:bright ? (Math.random()*.22+.70) : (Math.random()*.44+.18),
+        amp:bright ? (Math.random()*.26+.15) : (Math.random()*.18+.05),
+        speed:Math.random()*.018+.006,
+        phase:Math.random()*Math.PI*2,
+        c,
+        bright,
+        spike:bright && Math.random()>.30
+      };
+    }
+
+    function resize(){
+      w=canvas.clientWidth; h=canvas.clientHeight;
+      canvas.width=w*dpr; canvas.height=h*dpr;
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+
+      const normalCount=Math.min(420,Math.floor(w/4));
+      const brightCount=Math.min(44,Math.max(18,Math.floor(w/50)));
+      stars=[
+        ...Array.from({length:normalCount},()=>makeStar(false)),
+        ...Array.from({length:brightCount},()=>makeStar(true))
+      ];
+
+      dust=Array.from({length:Math.min(95,Math.floor(w/10))},()=>({
+        x:Math.random()*w,
+        y:Math.random()*h,
+        r:Math.random()*.7+.15,
+        a:Math.random()*.12+.025,
+        c:Math.random()>.66 ? '128,112,144' : (Math.random()>.5 ? '112,96,128' : '96,96,128')
+      }));
+    }
+
+
+    const heroEl=document.querySelector('.hero');
+    heroEl.addEventListener('pointermove',e=>{
+      const r=canvas.getBoundingClientRect();
+      mouse.x=e.clientX-r.left;
+      mouse.y=e.clientY-r.top;
+      mouse.active=true;
+    });
+    heroEl.addEventListener('pointerleave',()=>{
+      mouse.active=false;
+      mouse.x=-9999; mouse.y=-9999;
+    });
+
+    function drawCrossStar(s,a){
+      // Intentionally minimal: bright stars glow without geometric spikes.
+    }
+
+    function draw(){
+      t+=1;
+      ctx.clearRect(0,0,w,h);
+
+      // Extremely subtle colored cosmic dust.
+      for(const d of dust){
+        ctx.beginPath();
+        ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(${d.c},${d.a})`;
+        ctx.fill();
+      }
+
+      // Constellation interaction: nearby stars brighten and connect softly.
+      if(mouse.active){
+        const nearby=stars
+          .map(s=>({s,d:Math.hypot(s.x-mouse.x,s.y-mouse.y)}))
+          .filter(o=>o.d<125)
+          .sort((a,b)=>a.d-b.d)
+          .slice(0,8);
+
+        ctx.save();
+        ctx.lineWidth=.55;
+        for(let i=0;i<nearby.length;i++){
+          const a=nearby[i];
+          for(let j=i+1;j<nearby.length;j++){
+            const b=nearby[j];
+            const d=Math.hypot(a.s.x-b.s.x,a.s.y-b.s.y);
+            if(d<105){
+              const alpha=Math.max(0,.16-(d/105)*.13);
+              ctx.strokeStyle=`rgba(128,112,144,${alpha})`;
+              ctx.beginPath();
+              ctx.moveTo(a.s.x,a.s.y);
+              ctx.lineTo(b.s.x,b.s.y);
+              ctx.stroke();
+            }
+          }
+          const alpha=Math.max(0,.11-(a.d/125)*.09);
+          ctx.strokeStyle=`rgba(176,164,196,${alpha})`;
+          ctx.beginPath();
+          ctx.moveTo(mouse.x,mouse.y);
+          ctx.lineTo(a.s.x,a.s.y);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      for(const s of stars){
+        let a=Math.max(.06,Math.min(.98,s.base + Math.sin(t*s.speed+s.phase)*s.amp));
+        if(mouse.active){
+          const md=Math.hypot(s.x-mouse.x,s.y-mouse.y);
+          if(md<125) a=Math.min(1,a+(1-md/125)*.28);
+        }
+
+        ctx.save();
+        if(s.bright){
+          ctx.shadowColor=`rgba(${s.c[0]},${s.c[1]},${s.c[2]},.82)`;
+          ctx.shadowBlur=10+s.r*7;
+        }
+
+        const halo=s.bright ? s.r*2.35 : s.r;
+        const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,Math.max(halo,1));
+        g.addColorStop(0,`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${a})`);
+        g.addColorStop(.24,`rgba(${s.c[0]},${s.c[1]},${s.c[2]},${a*.72})`);
+        g.addColorStop(1,`rgba(${s.c[0]},${s.c[1]},${s.c[2]},0)`);
+
+        ctx.fillStyle=g;
+        ctx.beginPath();
+        ctx.arc(s.x,s.y,Math.max(halo,1),0,Math.PI*2);
+        ctx.fill();
+        ctx.restore();
+
+
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    addEventListener('resize',resize);
+    resize();
+    draw();
+
+    // Contact email: preserve static GitHub Pages compatibility.
+    const portfolioEmail='contact@innerone.life';
+    document.getElementById('copyEmail').addEventListener('click',async e=>{
+      try{await navigator.clipboard.writeText(portfolioEmail);e.currentTarget.textContent='Copied ✓';}
+      catch{location.href='mailto:'+portfolioEmail;}
+      setTimeout(()=>e.currentTarget.textContent='Copy email',1500);
+    });
+    document.getElementById('messageForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      const from=document.getElementById('fromEmail').value.trim();
+      const msg=document.getElementById('message').value.trim();
+      const subject=encodeURIComponent('Hello from your portfolio');
+      const body=encodeURIComponent(`Hi Elsa,\\n\\n${msg}\\n\\nFrom: ${from}`);
+      location.href=`mailto:${portfolioEmail}?subject=${subject}&body=${body}`;
+    });
+
+    // Portfolio assistant (local knowledge-base fallback; no secret key in GitHub Pages).
+    const chat=document.getElementById('chat'),launch=document.getElementById('chatLaunch'),
+      close=document.getElementById('chatClose'),log=document.getElementById('chatLog'),
+      form=document.getElementById('chatForm'),input=document.getElementById('chatInput');
+
+    function openChat(){chat.classList.add('open');setTimeout(()=>input.focus(),150);}
+    launch.onclick=openChat;close.onclick=()=>chat.classList.remove('open');
+    document.getElementById('heroChat').onclick=openChat;
+    document.querySelectorAll('.quick button').forEach(b=>b.onclick=()=>ask(b.dataset.q));
+
+    const kb=[
+      {keys:['amazon','alexa','ads'],answer:"Elsa spent nearly four years at Amazon. She first worked on Ads personalization (2022–2024), then on Alexa+ Conversational Ads (2024–2026), building experiences across web, mobile, and Echo and helping take a zero-to-one project from confidential development to launch."},
+      {keys:['inner one','innerone','company','founder','startup'],answer:"Inner One is Elsa’s current company. She’s building personal AI products for relationship clarity, emotional patterns, difficult conversations, and life choices — with a longer-term vision of useful longitudinal personal intelligence."},
+      {keys:['psychology','background','education','nyu','edinburgh'],answer:"Elsa’s background mixes psychology and engineering. She studied Psychology at the University of Edinburgh, later completed a master’s at NYU, and then worked as a software engineer at Amazon before becoming a founder."},
+      {keys:['build','interested','focus','ai'],answer:"Her current focus is human-centered consumer AI: products that help people understand themselves and make clearer decisions, especially when emotions make the problem hard to see."},
+      {keys:['contact','email','linkedin'],answer:"You can reach Elsa at contact@innerone.life or connect with her on LinkedIn using the contact section below."}
+    ];
+    function botAnswer(q){
+      const t=q.toLowerCase();
+      let best=null,score=0;
+      for(const item of kb){
+        const s=item.keys.reduce((n,k)=>n+(t.includes(k)?1:0),0);
+        if(s>score){score=s;best=item;}
+      }
+      return best?best.answer:"I can answer questions about Elsa’s Amazon experience, Inner One, education, product interests, or how to contact her.";
+    }
+    function addBubble(text,who){
+      const d=document.createElement('div');d.className='bubble '+who;d.textContent=text;log.appendChild(d);log.scrollTop=log.scrollHeight;
+    }
+    function ask(q){
+      if(!q.trim())return;
+      addBubble(q,'user');input.value='';
+      const typing=document.createElement('div');typing.className='bubble bot';typing.textContent='Thinking…';log.appendChild(typing);log.scrollTop=log.scrollHeight;
+      setTimeout(()=>{typing.remove();addBubble(botAnswer(q),'bot');},420);
+    }
+    form.addEventListener('submit',e=>{e.preventDefault();ask(input.value)});
+  </script>
+
+  <!-- Preserved from the current wenjialu.github.io site: DaoVoice chat widget -->
+  <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/b5587551.js","daovoice");</script>
+  <script>
+    try { daovoice('init', { app_id: "b5587551" }); daovoice('update'); } catch(e) {}
+  </script>
+  <!-- Preserved from the current site: LiveAgent chat button -->
+  <script type="text/javascript">
+    (function(d, src, c) {
+      var t=d.scripts[d.scripts.length - 1], s=d.createElement('script');
+      s.id='la_x2s6df8d'; s.async=true; s.src=src;
+      s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};
+      t.parentElement.insertBefore(s,t.nextSibling);
+    })(document,'https://academe.ladesk.com/scripts/track.js',function(e){
+      try { LiveAgent.createButton('rggaz4gf', e); } catch(err) {}
+    });
+  </script>
 
 </body>
-
 </html>
