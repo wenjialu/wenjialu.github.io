@@ -448,6 +448,12 @@
       transition:transform .22s ease,background .22s ease,border-color .22s ease,box-shadow .22s ease;
       backdrop-filter:blur(8px);
       font-size:16px;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      vertical-align:middle;
+      white-space:nowrap;
     }
     .contact-btn:hover{
       transform:translateY(-2px);
@@ -516,6 +522,21 @@
       box-shadow:0 17px 38px rgba(151,145,190,.18);
       filter:brightness(1.035);
     }
+    .message-form button:disabled{
+      cursor:wait;
+      opacity:.72;
+      transform:none;
+      filter:none;
+    }
+    .form-status{
+      min-height:22px;
+      margin-top:-4px;
+      color:#bfc4d7;
+      font-size:14px;
+      line-height:1.5;
+    }
+    .form-status.success{color:#d9d1b1}
+    .form-status.error{color:#e7aaa3}
     footer{padding:30px 0 48px;color:#7e8494;font-size:13px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -592,7 +613,7 @@
       .exp-details{grid-column:1/-1}
       .journey{grid-template-columns:1fr}
       .project-card.featured{grid-column:auto}
-      .contact-shell{padding:28px 20px;border-radius:28px}
+      .contact-shell{width:100%;padding:0;border-radius:0}
       .footer-inner{flex-direction:column}
       .chat{left:14px;right:auto;bottom:86px;height:min(560px,72vh)}
       .chat-launch{left:14px;right:auto;bottom:16px}
@@ -886,12 +907,17 @@
             <button class="contact-btn" id="copyEmail">Copy email</button>
           </div>
         </div>
-        <form class="message-form" id="messageForm">
+        <form class="message-form" id="messageForm" action="https://formsubmit.co/ajax/contact@innerone.life" method="POST">
+          <input type="hidden" name="_subject" value="New message from Elsa's portfolio">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
           <label for="fromEmail">Your email</label>
-          <input id="fromEmail" type="email" placeholder="you@example.com" required>
+          <input id="fromEmail" name="email" type="email" placeholder="you@example.com" required>
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Hi Elsa — I found your universe..." required></textarea>
-          <button type="submit">Open in my email app ↗</button>
+          <textarea id="message" name="message" placeholder="Hi Elsa — I found your universe..." required></textarea>
+          <button type="submit" id="messageSubmit">Send message ↗</button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>
@@ -1133,20 +1159,52 @@
     resize();
     draw();
 
-    // Contact email: preserve static GitHub Pages compatibility.
+    // Contact form: visitors submit their email + message directly from the page.
     const portfolioEmail='contact@innerone.life';
     document.getElementById('copyEmail').addEventListener('click',async e=>{
       try{await navigator.clipboard.writeText(portfolioEmail);e.currentTarget.textContent='Copied ✓';}
       catch{location.href='mailto:'+portfolioEmail;}
       setTimeout(()=>e.currentTarget.textContent='Copy email',1500);
     });
-    document.getElementById('messageForm').addEventListener('submit',e=>{
+
+    const messageForm=document.getElementById('messageForm');
+    const messageSubmit=document.getElementById('messageSubmit');
+    const formStatus=document.getElementById('formStatus');
+
+    messageForm.addEventListener('submit',async e=>{
       e.preventDefault();
-      const from=document.getElementById('fromEmail').value.trim();
-      const msg=document.getElementById('message').value.trim();
-      const subject=encodeURIComponent('Hello from your portfolio');
-      const body=encodeURIComponent(`Hi Elsa,\\n\\n${msg}\\n\\nFrom: ${from}`);
-      location.href=`mailto:${portfolioEmail}?subject=${subject}&body=${body}`;
+      if(!messageForm.reportValidity()) return;
+
+      const originalLabel=messageSubmit.textContent;
+      messageSubmit.disabled=true;
+      messageSubmit.textContent='Sending…';
+      formStatus.className='form-status';
+      formStatus.textContent='';
+
+      try{
+        const response=await fetch(messageForm.action,{
+          method:'POST',
+          body:new FormData(messageForm),
+          headers:{'Accept':'application/json'}
+        });
+
+        const data=await response.json().catch(()=>({}));
+        if(!response.ok || data.success===false){
+          throw new Error(data.message || 'Unable to send');
+        }
+
+        messageForm.reset();
+        formStatus.className='form-status success';
+        formStatus.textContent='Message sent ✦';
+        messageSubmit.textContent='Sent ✓';
+        setTimeout(()=>{ messageSubmit.textContent=originalLabel; },2200);
+      }catch(err){
+        formStatus.className='form-status error';
+        formStatus.textContent='Couldn’t send just now. Please try again or use “Email me” above.';
+        messageSubmit.textContent='Try again';
+      }finally{
+        messageSubmit.disabled=false;
+      }
     });
 
     // Portfolio assistant (local knowledge-base fallback; no secret key in GitHub Pages).
