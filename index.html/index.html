@@ -980,25 +980,19 @@
     }
 
     // Cursor star + soft ambient glow.
+    // Keep the tiny star locked to the real pointer so it feels immediate.
     const glow=document.getElementById('cursorGlow');
     const starCursor=document.getElementById('starCursor');
-    let cursorX=window.innerWidth/2, cursorY=window.innerHeight/2, starX=cursorX, starY=cursorY;
 
     addEventListener('pointermove',e=>{
-      cursorX=e.clientX; cursorY=e.clientY;
-      glow.style.left=cursorX+'px';
-      glow.style.top=cursorY+'px';
+      const x=e.clientX, y=e.clientY;
+      glow.style.left=x+'px';
+      glow.style.top=y+'px';
+      starCursor.style.left=x+'px';
+      starCursor.style.top=y+'px';
       starCursor.style.opacity='1';
-    });
-    addEventListener('pointerleave',()=>starCursor.style.opacity='.0');
-    function animateCursor(){
-      starX += (cursorX - starX) * 0.38;
-      starY += (cursorY - starY) * 0.38;
-      starCursor.style.left = starX + 'px';
-      starCursor.style.top = starY + 'px';
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
+    }, {passive:true});
+    addEventListener('pointerleave',()=>starCursor.style.opacity='0');
 
     // Magnetic/tilt interactions.
     document.querySelectorAll('.tilt').forEach(card=>{
