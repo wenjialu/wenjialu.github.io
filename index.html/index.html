@@ -782,9 +782,12 @@
             <button class="btn btn-ghost" id="heroChat">Ask my portfolio AI ✦</button>
           </div>
           <div class="hero-meta hero-visitor-meta" aria-label="Website visitors">
-            <span class="hero-visitor-sentence"><span class="hero-visitor-spark">✦</span> <strong id="busuanzi_value_site_uv">3,216</strong> visitors have found this little universe.</span>
+            <span id="busuanzi_container_site_uv" class="hero-visitor-sentence" style="display:none">
+              <span class="hero-visitor-spark">✦</span>
+              <strong id="busuanzi_value_site_uv"></strong>
+              visitors have found this little universe.
+            </span>
           </div>
-          <div class="traffic-preview-note hero-preview-note" id="trafficPreviewNote">Preview number only — live version uses the real visitor count.</div>
         </div>
 
         <div class="hero-art reveal visible">
@@ -1325,25 +1328,6 @@
   </script>
 
 
-  <script>
-    // Homepage traffic preview.
-    // On the live GitHub Pages site, Busuanzi replaces the sample numbers with real PV / UV.
-    const homepageTrafficPreview=true;
-    const uvNode=document.getElementById('busuanzi_value_site_uv');
-    const previewNote=document.getElementById('trafficPreviewNote');
-
-    if(location.protocol==='file:'){
-      if(previewNote) previewNote.style.display='block';
-    }else{
-      if(uvNode) uvNode.textContent='—';
-      const trafficWatcher=setInterval(()=>{
-        if(uvNode?.textContent.trim() && uvNode.textContent.trim()!=='—'){
-          clearInterval(trafficWatcher);
-        }
-      },350);
-      setTimeout(()=>clearInterval(trafficWatcher),8000);
-    }
-  </script>
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
