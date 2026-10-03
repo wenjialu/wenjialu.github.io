@@ -10,6 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TZZNMG0LM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3TZZNMG0LM');
+  </script>
   <style>
     :root{
       --bg:#03040a;
@@ -247,6 +255,35 @@
       margin-top:24px;
       display:flex;gap:18px;flex-wrap:wrap;
       color:#888e9f;font-size:13px;
+    }
+    .hero-visitor-meta{
+      gap:0;
+      align-items:center;
+      color:#9da2b5;
+    }
+    .hero-visitor-sentence{
+      display:inline-flex;
+      align-items:baseline;
+      gap:5px;
+      font-size:13px;
+      letter-spacing:.015em;
+    }
+    .hero-visitor-sentence strong{
+      color:#d9dbe5;
+      font-weight:600;
+      letter-spacing:-.01em;
+    }
+    .hero-visitor-spark{
+      margin-right:2px;
+      color:#d8c79c;
+      text-shadow:0 0 14px rgba(216,199,156,.38);
+    }
+    .hero-preview-note{
+      display:none;
+      margin-top:6px;
+      color:#74798b;
+      font-size:10px;
+      letter-spacing:.04em;
     }
     .hero-art{
       position:relative;
@@ -543,18 +580,6 @@
     .form-status.error{color:#e7aaa3}
     footer{padding:30px 0 48px;color:#7e8494;font-size:13px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
-    .visitor-stats{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      flex-wrap:wrap;
-      color:#8f93a4;
-      font-size:12px;
-      letter-spacing:.02em;
-    }
-    .visitor-stats .dot{opacity:.45}
-    #busuanzi_container_site_pv,
-    #busuanzi_container_site_uv{display:none}
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
     .reveal.visible{opacity:1;transform:none}
     .chat-launch{
@@ -614,6 +639,7 @@
       .brand-dot{width:31px;height:31px}
       h1{font-size:clamp(54px,16vw,76px)}
       .hero-copy{font-size:17px}
+      .hero-visitor-meta{line-height:1.6}
       .hero-actions .btn{width:100%}
       .hero-art{min-height:360px}
       .orbit{width:310px}
@@ -723,7 +749,7 @@
   <!-- Contact layout refined to screenshot reference: galaxy -->
   <!-- Galaxy palette tuned to the user's dark violet Milky Way reference -->
   <!-- Palette uses requested galaxy mist colors #606080 #706080 #807090 -->
-  <!-- LOCAL PREVIEW ONLY: Space Grotesk + Cormorant Garamond + lighter galaxy palette; not submitted to GitHub -->
+  <!-- Portfolio analytics: GA4 + Busuanzi visitor count -->
 </head>
 <body>
   <div class="star-cursor" id="starCursor" aria-hidden="true"><div class="halo"></div></div>
@@ -755,11 +781,10 @@
             <a class="btn btn-primary" href="#work">Explore what I’m building ↘</a>
             <button class="btn btn-ghost" id="heroChat">Ask my portfolio AI ✦</button>
           </div>
-          <div class="hero-meta">
-            <span>Amazon · 2022–2026</span>
-            <span>Inner One · Founder</span>
-            <span>Psychology × Engineering</span>
+          <div class="hero-meta hero-visitor-meta" aria-label="Website visitors">
+            <span class="hero-visitor-sentence"><span class="hero-visitor-spark">✦</span> <strong id="busuanzi_value_site_uv">3,216</strong> visitors have found this little universe.</span>
           </div>
+          <div class="traffic-preview-note hero-preview-note" id="trafficPreviewNote">Preview number only — live version uses the real visitor count.</div>
         </div>
 
         <div class="hero-art reveal visible">
@@ -891,6 +916,7 @@
             <p>A more traditional view of my education, engineering experience, and professional work.</p>
           </a>
         </div>
+
       </div>
     </section>
 
@@ -944,11 +970,7 @@
   <footer>
     <div class="container footer-inner">
       <span>© 2026 Build by Elsa Lu</span>
-      <span class="visitor-stats" aria-label="Site visitor statistics">
-        <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> visits</span>
-        <span class="dot">·</span>
-        <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> visitors</span>
-      </span>
+      <span>Still fascinated by new tech — just building more of it now.</span>
     </div>
   </footer>
 
@@ -1302,23 +1324,40 @@
     });
   </script>
 
+
   <script>
-    // Reveal visitor stats once Busuanzi has populated the values.
-    const visitorStatsObserver=setInterval(()=>{
-      const pv=document.getElementById('busuanzi_value_site_pv');
-      const uv=document.getElementById('busuanzi_value_site_uv');
-      const pvc=document.getElementById('busuanzi_container_site_pv');
-      const uvc=document.getElementById('busuanzi_container_site_uv');
-      if(pv?.textContent.trim()){
-        if(pvc) pvc.style.display='inline';
-        if(uvc && uv?.textContent.trim()) uvc.style.display='inline';
-        clearInterval(visitorStatsObserver);
-      }
-    },300);
-    setTimeout(()=>clearInterval(visitorStatsObserver),8000);
+    // Homepage traffic preview.
+    // On the live GitHub Pages site, Busuanzi replaces the sample numbers with real PV / UV.
+    const homepageTrafficPreview=true;
+    const uvNode=document.getElementById('busuanzi_value_site_uv');
+    const previewNote=document.getElementById('trafficPreviewNote');
+
+    if(location.protocol==='file:'){
+      if(previewNote) previewNote.style.display='block';
+    }else{
+      if(uvNode) uvNode.textContent='—';
+      const trafficWatcher=setInterval(()=>{
+        if(uvNode?.textContent.trim() && uvNode.textContent.trim()!=='—'){
+          clearInterval(trafficWatcher);
+        }
+      },350);
+      setTimeout(()=>clearInterval(trafficWatcher),8000);
+    }
+  </script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script>
+    // GA4-ready event hooks. These are inert until the real Google tag is installed.
+    function trackPortfolioEvent(name,params={}){
+      if(typeof window.gtag==='function') window.gtag('event',name,params);
+    }
+    document.querySelector('a[href="https://innerone.life/"]')?.addEventListener('click',()=>trackPortfolioEvent('click_innerone'));
+    document.querySelector('a[href*="linkedin.com/in/wenjialu"]')?.addEventListener('click',()=>trackPortfolioEvent('click_linkedin'));
+    document.querySelector('a[href^="mailto:contact@innerone.life"]')?.addEventListener('click',()=>trackPortfolioEvent('click_email'));
+    document.getElementById('messageForm')?.addEventListener('submit',()=>trackPortfolioEvent('submit_message'));
+    document.getElementById('chatLaunch')?.addEventListener('click',()=>trackPortfolioEvent('open_portfolio_ai'));
   </script>
 
-  <!-- Restored from the original portfolio: Busuanzi site PV / UV counters -->
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
