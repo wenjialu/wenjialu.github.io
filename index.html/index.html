@@ -543,6 +543,18 @@
     .form-status.error{color:#e7aaa3}
     footer{padding:30px 0 48px;color:#7e8494;font-size:13px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
+    .visitor-stats{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      color:#8f93a4;
+      font-size:12px;
+      letter-spacing:.02em;
+    }
+    .visitor-stats .dot{opacity:.45}
+    #busuanzi_container_site_pv,
+    #busuanzi_container_site_uv{display:none}
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
     .reveal.visible{opacity:1;transform:none}
     .chat-launch{
@@ -932,7 +944,11 @@
   <footer>
     <div class="container footer-inner">
       <span>© 2026 Build by Elsa Lu</span>
-      <span>Still fascinated by new tech — just building more of it now.</span>
+      <span class="visitor-stats" aria-label="Site visitor statistics">
+        <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span> visits</span>
+        <span class="dot">·</span>
+        <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> visitors</span>
+      </span>
     </div>
   </footer>
 
@@ -1286,5 +1302,23 @@
     });
   </script>
 
+  <script>
+    // Reveal visitor stats once Busuanzi has populated the values.
+    const visitorStatsObserver=setInterval(()=>{
+      const pv=document.getElementById('busuanzi_value_site_pv');
+      const uv=document.getElementById('busuanzi_value_site_uv');
+      const pvc=document.getElementById('busuanzi_container_site_pv');
+      const uvc=document.getElementById('busuanzi_container_site_uv');
+      if(pv?.textContent.trim()){
+        if(pvc) pvc.style.display='inline';
+        if(uvc && uv?.textContent.trim()) uvc.style.display='inline';
+        clearInterval(visitorStatsObserver);
+      }
+    },300);
+    setTimeout(()=>clearInterval(visitorStatsObserver),8000);
+  </script>
+
+  <!-- Restored from the original portfolio: Busuanzi site PV / UV counters -->
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
